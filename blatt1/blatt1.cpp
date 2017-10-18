@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
   // instanciate Potential
   GravityPotential Pot;
 
-  // create World
+  // create Worldtest
   World W;
 
   // read Parameters
