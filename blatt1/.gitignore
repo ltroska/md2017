@@ -1,0 +1,5 @@
+*.o
+*.d
+blatt1
+api-doc
+tags
