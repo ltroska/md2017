@@ -15,7 +15,7 @@ SRCS = blatt1.cpp world.cpp timediscretization.cpp gravitypotential.cpp velocity
 CC = g++
 
 # define any compile-time flags
-CFLAGS = -Wall -g
+CFLAGS = -Wall -g -std=c++14
 
 # define any directories containing header files other than /usr/include
 #
