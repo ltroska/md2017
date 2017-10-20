@@ -2,6 +2,7 @@
 #define _PARTICLE_HPP
 
 #include "defines.hpp"
+#include <cstdlib>
 
 /**
  * @brief Particle data
@@ -10,6 +11,7 @@
  */
 class Particle {
 public:
+    std::size_t id;
     /// Mass
     real m;
     /// Position

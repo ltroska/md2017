@@ -12,7 +12,7 @@ MAIN = blatt1
 SRCS = blatt1.cpp world.cpp timediscretization.cpp gravitypotential.cpp velocityverlet.cpp observer.cpp
 
 # define the C compiler to use
-CC = g++-7.2
+CC = g++
 
 # define any compile-time flags
 CFLAGS = -Wall -g -std=c++14

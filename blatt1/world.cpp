@@ -57,7 +57,7 @@ void World::read_Particles(const std::string &filename)
 
     // helper strings
     double id;
-
+    std::string line;
     // read file till eof
     while (parfile.good())
     {
@@ -69,7 +69,7 @@ void World::read_Particles(const std::string &filename)
         // put line into string stream
         strstr << line;
         // read option and value from stringstream
-        strstr >> id;
+        strstr >> part.id;
         strstr >> part.m;
         strstr >> part.x[0];
         strstr >> part.x[1];
