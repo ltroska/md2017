@@ -41,6 +41,7 @@ void Observer::output_statistics()
 void Observer::output_coordinates()
 {
     // write coordinates into the filestream, separated with tabulars
+    coordinates << W.t << "\t";
     for (auto &p : W.particles) {
         coordinates
             << p.x[0] << "\t"
@@ -52,9 +53,6 @@ void Observer::output_coordinates()
 
 void Observer::notify()
 {
-    // debug output
-    std::cout << "notify()" << std::endl;
-
     // call output functions
     output_statistics();
     output_coordinates();
