@@ -12,10 +12,10 @@ MAIN = blatt1
 SRCS = blatt1.cpp world.cpp timediscretization.cpp gravitypotential.cpp velocityverlet.cpp observer.cpp
 
 # define the C compiler to use
-CC = g++
+CC = g++-7.2
 
 # define any compile-time flags
-CFLAGS = -Wall -g
+CFLAGS = -Wall -g -std=c++14
 
 # define any directories containing header files other than /usr/include
 #
