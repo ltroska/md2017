@@ -1,0 +1,13 @@
+*.o
+*.d
+api-doc
+tags
+
+blatt1
+
+*.coordinates
+*.statistics
+
+*build*
+
+.idea/

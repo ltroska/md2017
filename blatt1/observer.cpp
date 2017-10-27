@@ -35,6 +35,7 @@ void Observer::output_statistics()
         << W.t << "\t"
         << W.e_pot << "\t"
         << W.e_kin << "\t"
+        << W.e_kin + W.e_pot << "\t"
         << std::endl;
 }
 
@@ -43,9 +44,9 @@ void Observer::output_coordinates()
     // write coordinates into the filestream, separated with tabulars
     coordinates << W.t << "\t";
     for (auto &p : W.particles) {
-        coordinates
-            << p.x[0] << "\t"
-            << p.x[1] << "\t";
+        for (std::size_t d = 0; d < DIM; ++d) {
+            coordinates << p.x[d] << "\t";
+        }
     }
     
     coordinates << std::endl;

@@ -14,8 +14,7 @@ void VelocityVerlet::simulate()
 {
     // while simulation end time not reached
     comp_F();
-    while (W.t < W.t_end)
-    {
+    while (W.t < W.t_end) {
         timestep(W.delta_t);
     }
 }
@@ -34,12 +33,17 @@ void VelocityVerlet::timestep(real delta_t)
 
 void VelocityVerlet::comp_F()
 {
-    for (auto &p : W.particles) {
-        p.F[0] = 0;
-        p.F[1] = 0;
-        for (auto &q : W.particles) {
-            if (p.id != q.id) {
-                Pot.force(p, q);
+    W.e_pot = 0;
+    for (std::size_t idx = 0; idx < W.particles.size(); ++idx) {
+        auto& p = W.particles[idx];
+        for (std::size_t d = 0; d < DIM; ++d) {
+            p.F[d] = 0;
+        }
+
+        for (std::size_t idy = 0; idy < W.particles.size(); ++idy) {
+            auto& q = W.particles[idy];
+            if (idx != idy) {
+                W.e_pot += Pot.force(p, q);
             }
         }
     }
@@ -47,9 +51,13 @@ void VelocityVerlet::comp_F()
 
 void VelocityVerlet::update_V()
 {
+    W.e_kin = 0;
     for (auto &p : W.particles) {
-        p.v[0] = p.v[0] + W.delta_t * .5 / p.m * (p.F_old[0] + p.F[0]);
-        p.v[1] = p.v[1] + W.delta_t * .5 / p.m * (p.F_old[1] + p.F[1]);
+
+        for (std::size_t d = 0; d < DIM; ++d) {
+            p.v[d] = p.v[d] + W.delta_t * .5 / p.m * (p.F_old[d] + p.F[d]);
+        }
+
         W.e_kin += 0.5 * p.m * (p.v[0] * p.v[0] + p.v[1] * p.v[1]);
     }
 }
@@ -57,11 +65,11 @@ void VelocityVerlet::update_V()
 void VelocityVerlet::update_X()
 {
     for (auto &p : W.particles) {
-        p.x[0] = p.x[0] + W.delta_t * (p.v[0] + .5 / p.m * p.F[0] * W.delta_t);
-        p.x[1] = p.x[1] + W.delta_t * (p.v[1] + .5 / p.m * p.F[1] * W.delta_t);
 
-        p.F_old[0] = p.F[0];
-        p.F_old[1] = p.F[1];
+        for (std::size_t d = 0; d < DIM; ++d) {
+            p.x[d] = p.x[d] + W.delta_t * (p.v[d] + .5 / p.m * p.F[d] * W.delta_t);
+            p.F_old[d] = p.F[d];
+        }
     }
 }
 

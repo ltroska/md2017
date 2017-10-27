@@ -56,7 +56,6 @@ void World::read_Particles(const std::string &filename)
         );
 
     // helper strings
-    double id;
     std::string line;
     // read file till eof
     while (parfile.good())
@@ -64,19 +63,25 @@ void World::read_Particles(const std::string &filename)
         Particle part;
         // read line from file
         getline(parfile,line);
-        // create a string stream
-        std::stringstream strstr;
-        // put line into string stream
-        strstr << line;
-        // read option and value from stringstream
-        strstr >> part.id;
-        strstr >> part.m;
-        strstr >> part.x[0];
-        strstr >> part.x[1];
-        strstr >> part.v[0];
-        strstr >> part.v[1];
 
-        particles.emplace_back(std::move(part));
+        if (!line.empty()) {
+            // create a string stream
+            std::stringstream strstr;
+            // put line into string stream
+            strstr << line;
+            // read option and value from stringstream
+            strstr >> part.id;
+            strstr >> part.m;
+            for (std::size_t d = 0; d < DIM; ++d) {
+                strstr >> part.x[d];
+            }
+
+            for (std::size_t d = 0; d < DIM; ++d) {
+                strstr >> part.v[d];
+            }
+
+            particles.emplace_back(std::move(part));
+        }
     }
     // close file
     parfile.close();
