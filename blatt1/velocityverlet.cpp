@@ -36,15 +36,10 @@ void VelocityVerlet::comp_F()
     W.e_pot = 0;
     for (std::size_t idx = 0; idx < W.particles.size(); ++idx) {
         auto& p = W.particles[idx];
-        for (std::size_t d = 0; d < DIM; ++d) {
-            p.F[d] = 0;
-        }
 
-        for (std::size_t idy = 0; idy < W.particles.size(); ++idy) {
+        for (std::size_t idy = idx + 1; idy < W.particles.size(); ++idy) {
             auto& q = W.particles[idy];
-            if (idx != idy) {
-                W.e_pot += Pot.force(p, q);
-            }
+            W.e_pot += Pot.force(p, q);
         }
     }
 }
@@ -69,6 +64,7 @@ void VelocityVerlet::update_X()
         for (std::size_t d = 0; d < DIM; ++d) {
             p.x[d] = p.x[d] + W.delta_t * (p.v[d] + .5 / p.m * p.F[d] * W.delta_t);
             p.F_old[d] = p.F[d];
+            p.F[d] = 0;
         }
     }
 }
