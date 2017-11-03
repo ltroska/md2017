@@ -13,6 +13,10 @@ VelocityVerlet::VelocityVerlet(World& _W, Potential* _Pot, Observer& _O) : TimeD
 void VelocityVerlet::simulate()
 {
     // while simulation end time not reached
+    for (auto& p : W.particles)
+        for (std::size_t d = 0; d < DIM; ++d)
+            p.F[d] = 0;
+
     comp_F();
     while (W.t < W.t_end) {
         timestep(W.delta_t);
@@ -24,6 +28,7 @@ void VelocityVerlet::timestep(real delta_t)
     W.t += delta_t;
 
     update_X();
+    handle_borders();
     comp_F();
     update_V();
 
@@ -63,9 +68,31 @@ void VelocityVerlet::update_X()
 
         for (std::size_t d = 0; d < DIM; ++d) {
             p.x[d] = p.x[d] + W.delta_t * (p.v[d] + .5 / p.m * p.F[d] * W.delta_t);
+
             p.F_old[d] = p.F[d];
             p.F[d] = 0;
         }
+    }
+}
+
+void VelocityVerlet::handle_borders()
+{
+    for (std::size_t id = 0; id < W.particles.size(); ++id) {
+        auto const p = W.particles[id];
+        for (std::size_t d = 0; d < DIM; ++d) {
+            if (W.lower_border[d] == leaving && p.x[d] < 0) {
+                W.particles.erase(W.particles.begin() + id);
+                --id;
+                break;
+            }
+
+            if (W.upper_border[d] == leaving && p.x[d] > W.length[d]) {
+                W.particles.erase(W.particles.begin() + id);
+                --id;
+                break;
+            }
+        }
+
     }
 }
 

@@ -3,10 +3,12 @@
 
 #include "defines.hpp"
 #include "particle.hpp"
+#include "bordertype.hpp"
 #include <vector>
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <array>
 
 /**
  * @brief the world class holds all information of the simulation environment
@@ -52,6 +54,11 @@ public:
     real e_tot;
     /// Vector of particles
     std::vector<Particle> particles;
+
+    std::array<double, DIM> length;
+
+    std::array<BorderType, DIM> lower_border;
+    std::array<BorderType, DIM> upper_border;
 };
 
 /**

@@ -54,7 +54,12 @@ public:
     /**
      * @brief calculate the new position of all particles according to their velocity
      */
-    virtual void update_X();
+    virtual void update_X();   \
+
+    /**
+     * @brief handles the borders
+     */
+    virtual void handle_borders();
 
 protected:
     // data structures inherited from TimeDiscretization

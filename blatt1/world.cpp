@@ -4,7 +4,12 @@
 
 World::World() : name("unknown"),t(0),delta_t(0),t_end(0),e_kin(0),e_pot(0),e_tot(0)
 {
-    // empty constructor
+    for (std::size_t d = 0; d < DIM; ++d) {
+        upper_border[d] = unknown;
+        lower_border[d] = unknown;
+        length[d] = 0;
+    }
+
 }
 
 void World::read_Parameter(const std::string &filename)
@@ -38,6 +43,28 @@ void World::read_Parameter(const std::string &filename)
             strstr >> t_end;
         if (option=="name")
             strstr >> name;
+        if (option=="length") {
+            for (std::size_t d = 0; d < DIM; ++d) {
+                strstr >> length[d];
+            }
+        }
+
+        std::string tmp;
+        if (option=="upper_border") {
+            for (std::size_t d = 0; d < DIM; ++d) {
+                strstr >> tmp;
+                if (tmp == "leaving")
+                    upper_border[d] = leaving;
+            }
+        }
+
+        if (option=="lower_border") {
+            for (std::size_t d = 0; d < DIM; ++d) {
+                strstr >> tmp;
+                if (tmp == "leaving")
+                    lower_border[d] = leaving;
+            }
+        }
     }
     // close file
     parfile.close();
@@ -72,6 +99,7 @@ void World::read_Particles(const std::string &filename)
             // read option and value from stringstream
             strstr >> part.id;
             strstr >> part.m;
+
             for (std::size_t d = 0; d < DIM; ++d) {
                 strstr >> part.x[d];
             }
@@ -80,16 +108,30 @@ void World::read_Particles(const std::string &filename)
                 strstr >> part.v[d];
             }
 
+
+
             particles.emplace_back(std::move(part));
         }
     }
+
     // close file
     parfile.close();
 }
 
 std::ostream& operator << (std::ostream& os, World& W) {
     os << "t=" << W.t << " delta_t=" << W.delta_t << " t_end=" << W.t_end
-       << " Number of Particles=" << W.particles.size();
+       << " Number of Particles=" << W.particles.size()
+        << " length ";
+    for (std::size_t d = 0; d < DIM; ++d)
+        os << W.length[d] << " ";
+
+    os << " upper_border ";
+    for (std::size_t d = 0; d < DIM; ++d)
+        os << W.upper_border[d] << " ";
+
+    os << " lower_border ";
+    for (std::size_t d = 0; d < DIM; ++d)
+        os << W.lower_border[d] << " ";
     return os;
 }
 // vim:set et sts=4 ts=4 sw=4 ai ci cin:

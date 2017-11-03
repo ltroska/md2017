@@ -6,10 +6,10 @@
 #
 
 # define the executable file 
-MAIN = blatt1
+MAIN = blatt2
 
 # define the C source files
-SRCS = blatt1.cpp world.cpp timediscretization.cpp gravitypotential.cpp velocityverlet.cpp observer.cpp
+SRCS = blatt2.cpp world.cpp timediscretization.cpp gravitypotential.cpp velocityverlet.cpp observer.cpp ljpotential.cpp
 
 # define the C compiler to use
 CC = g++

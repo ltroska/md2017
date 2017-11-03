@@ -41,6 +41,11 @@ public:
      */
     void output_coordinates();
 
+    /**
+     * @brief output the coordinates of the particles in xyz format
+     */
+    void output_xyz();
+
 protected:
     /// The world we are observing
     World &W;
@@ -48,6 +53,8 @@ protected:
     std::ofstream statistics;
     /// coordiantes filestream
     std::ofstream coordinates;
+
+    std::ofstream xyz_out;
 
 private:
     /// Disabled Constructor
