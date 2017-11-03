@@ -1,6 +1,0 @@
-set style data lines
-set size ratio -1
-plot "halley.coordinates" u 2:3 t "Sonne", \
-	"halley.coordinates" u 4:5 t "Erde", \
-	"halley.coordinates" u 6:7 t "Jupiter", \
-	"halley.coordinates" u 8:9 t "Halley"
