@@ -1,0 +1,4004 @@
+2
+timestep 0.01
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.02
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.03
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.04
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.05
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.06
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.07
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.08
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.09
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.1
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.11
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.12
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.13
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.14
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.15
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.16
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.17
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.18
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.19
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.2
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.21
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.22
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.23
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.24
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.25
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.26
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.27
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.28
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.29
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.3
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.31
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.32
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.33
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.34
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.35
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.36
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.37
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.38
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.39
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.4
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.41
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.42
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.43
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.44
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.45
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.46
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.47
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.48
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.49
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.5
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.51
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.52
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.53
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.54
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.55
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.56
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.57
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.58
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.59
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.6
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.61
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.62
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.63
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.64
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.65
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.66
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.67
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.68
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.69
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.7
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.71
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.72
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.73
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.74
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.75
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.76
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.77
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.78
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.79
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.8
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.81
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.82
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.83
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.84
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.85
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.86
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.87
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.88
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.89
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.9
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.91
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.92
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.93
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.94
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.95
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.96
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.97
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.98
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 0.99
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.01
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.02
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.03
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.04
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.05
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.06
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.07
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.08
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.09
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.1
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.11
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.12
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.13
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.14
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.15
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.16
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.17
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.18
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.19
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.2
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.21
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.22
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.23
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.24
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.25
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.26
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.27
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.28
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.29
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.3
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.31
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.32
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.33
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.34
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.35
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.36
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.37
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.38
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.39
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.4
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.41
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.42
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.43
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.44
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.45
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.46
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.47
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.48
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.49
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.5
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.51
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.52
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.53
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.54
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.55
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.56
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.57
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.58
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.59
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.6
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.61
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.62
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.63
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.64
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.65
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.66
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.67
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.68
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.69
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.7
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.71
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.72
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.73
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.74
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.75
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.76
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.77
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.78
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.79
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.8
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.81
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.82
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.83
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.84
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.85
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.86
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.87
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.88
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.89
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.9
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.91
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.92
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.93
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.94
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.95
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.96
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.97
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.98
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 1.99
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.01
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.02
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.03
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.04
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.05
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.06
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.07
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.08
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.09
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.1
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.11
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.12
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.13
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.14
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.15
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.16
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.17
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.18
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.19
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.2
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.21
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.22
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.23
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.24
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.25
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.26
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.27
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.28
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.29
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.3
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.31
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.32
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.33
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.34
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.35
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.36
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.37
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.38
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.39
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.4
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.41
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.42
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.43
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.44
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.45
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.46
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.47
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.48
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.49
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.5
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.51
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.52
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.53
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.54
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.55
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.56
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.57
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.58
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.59
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.6
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.61
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.62
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.63
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.64
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.65
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.66
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.67
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.68
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.69
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.7
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.71
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.72
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.73
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.74
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.75
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.76
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.77
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.78
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.79
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.8
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.81
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.82
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.83
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.84
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.85
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.86
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.87
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.88
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.89
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.9
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.91
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.92
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.93
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.94
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.95
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.96
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.97
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.98
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 2.99
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.01
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.02
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.03
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.04
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.05
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.06
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.07
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.08
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.09
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.1
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.11
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.12
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.13
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.14
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.15
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.16
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.17
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.18
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.19
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.2
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.21
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.22
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.23
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.24
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.25
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.26
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.27
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.28
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.29
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.3
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.31
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.32
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.33
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.34
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.35
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.36
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.37
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.38
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.39
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.4
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.41
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.42
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.43
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.44
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.45
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.46
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.47
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.48
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.49
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.5
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.51
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.52
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.53
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.54
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.55
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.56
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.57
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.58
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.59
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.6
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.61
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.62
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.63
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.64
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.65
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.66
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.67
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.68
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.69
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.7
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.71
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.72
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.73
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.74
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.75
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.76
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.77
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.78
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.79
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.8
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.81
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.82
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.83
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.84
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.85
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.86
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.87
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.88
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.89
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.9
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.91
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.92
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.93
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.94
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.95
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.96
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.97
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.98
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 3.99
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.01
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.02
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.03
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.04
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.05
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.06
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.07
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.08
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.09
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.1
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.11
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.12
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.13
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.14
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.15
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.16
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.17
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.18
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.19
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.2
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.21
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.22
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.23
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.24
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.25
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.26
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.27
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.28
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.29
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.3
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.31
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.32
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.33
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.34
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.35
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.36
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.37
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.38
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.39
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.4
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.41
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.42
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.43
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.44
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.45
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.46
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.47
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.48
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.49
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.5
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.51
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.52
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.53
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.54
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.55
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.56
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.57
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.58
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.59
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.6
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.61
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.62
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.63
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.64
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.65
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.66
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.67
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.68
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.69
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.7
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.71
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.72
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.73
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.74
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.75
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.76
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.77
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.78
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.79
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.8
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.81
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.82
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.83
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.84
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.85
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.86
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.87
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.88
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.89
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.9
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.91
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.92
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.93
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.94
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.95
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.96
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.97
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.98
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 4.99
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.01
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.02
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.03
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.04
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.05
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.06
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.07
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.08
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.09
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.1
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.11
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.12
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.13
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.14
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.15
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.16
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.17
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.18
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.19
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.2
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.21
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.22
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.23
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.24
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.25
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.26
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.27
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.28
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.29
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.3
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.31
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.32
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.33
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.34
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.35
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.36
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.37
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.38
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.39
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.4
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.41
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.42
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.43
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.44
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.45
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.46
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.47
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.48
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.49
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.5
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.51
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.52
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.53
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.54
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.55
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.56
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.57
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.58
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.59
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.6
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.61
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.62
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.63
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.64
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.65
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.66
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.67
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.68
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.69
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.7
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.71
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.72
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.73
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.74
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.75
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.76
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.77
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.78
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.79
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.8
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.81
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.82
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.83
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.84
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.85
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.86
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.87
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.88
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.89
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.9
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.91
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.92
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.93
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.94
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.95
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.96
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.97
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.98
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 5.99
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.01
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.02
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.03
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.04
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.05
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.06
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.07
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.08
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.09
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.1
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.11
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.12
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.13
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.14
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.15
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.16
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.17
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.18
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.19
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.2
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.21
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.22
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.23
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.24
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.25
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.26
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.27
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.28
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.29
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.3
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.31
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.32
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.33
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.34
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.35
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.36
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.37
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.38
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.39
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.4
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.41
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.42
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.43
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.44
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.45
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.46
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.47
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.48
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.49
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.5
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.51
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.52
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.53
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.54
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.55
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.56
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.57
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.58
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.59
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.6
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.61
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.62
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.63
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.64
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.65
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.66
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.67
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.68
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.69
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.7
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.71
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.72
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.73
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.74
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.75
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.76
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.77
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.78
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.79
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.8
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.81
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.82
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.83
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.84
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.85
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.86
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.87
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.88
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.89
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.9
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.91
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.92
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.93
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.94
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.95
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.96
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.97
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.98
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 6.99
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.01
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.02
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.03
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.04
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.05
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.06
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.07
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.08
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.09
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.1
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.11
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.12
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.13
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.14
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.15
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.16
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.17
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.18
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.19
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.2
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.21
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.22
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.23
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.24
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.25
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.26
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.27
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.28
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.29
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.3
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.31
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.32
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.33
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.34
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.35
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.36
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.37
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.38
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.39
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.4
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.41
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.42
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.43
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.44
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.45
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.46
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.47
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.48
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.49
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.5
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.51
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.52
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.53
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.54
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.55
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.56
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.57
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.58
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.59
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.6
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.61
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.62
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.63
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.64
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.65
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.66
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.67
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.68
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.69
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.7
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.71
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.72
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.73
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.74
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.75
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.76
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.77
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.78
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.79
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.8
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.81
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.82
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.83
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.84
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.85
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.86
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.87
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.88
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.89
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.9
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.91
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.92
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.93
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.94
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.95
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.96
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.97
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.98
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 7.99
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.01
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.02
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.03
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.04
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.05
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.06
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.07
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.08
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.09
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.1
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.11
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.12
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.13
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.14
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.15
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.16
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.17
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.18
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.19
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.2
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.21
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.22
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.23
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.24
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.25
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.26
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.27
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.28
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.29
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.3
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.31
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.32
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.33
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.34
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.35
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.36
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.37
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.38
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.39
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.4
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.41
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.42
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.43
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.44
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.45
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.46
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.47
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.48
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.49
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.5
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.51
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.52
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.53
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.54
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.55
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.56
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.57
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.58
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.59
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.6
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.61
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.62
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.63
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.64
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.65
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.66
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.67
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.68
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.69
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.7
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.71
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.72
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.73
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.74
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.75
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.76
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.77
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.78
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.79
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.8
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.81
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.82
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.83
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.84
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.85
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.86
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.87
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.88
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.89
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.9
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.91
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.92
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.93
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.94
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.95
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.96
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.97
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.98
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 8.99
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.01
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.02
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.03
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.04
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.05
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.06
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.07
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.08
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.09
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.1
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.11
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.12
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.13
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.14
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.15
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.16
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.17
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.18
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.19
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.2
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.21
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.22
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.23
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.24
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.25
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.26
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.27
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.28
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.29
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.3
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.31
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.32
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.33
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.34
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.35
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.36
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.37
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.38
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.39
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.4
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.41
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.42
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.43
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.44
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.45
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.46
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.47
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.48
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.49
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.5
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.51
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.52
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.53
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.54
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.55
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.56
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.57
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.58
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.59
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.6
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.61
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.62
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.63
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.64
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.65
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.66
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.67
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.68
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.69
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.7
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.71
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.72
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.73
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.74
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.75
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.76
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.77
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.78
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.79
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.8
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.81
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.82
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.83
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.84
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.85
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.86
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.87
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.88
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.89
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.9
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.91
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.92
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.93
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.94
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.95
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.96
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.97
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.98
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 9.99
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 10
+H 5 5 5 
+H 5 5 6.12246 
+2
+timestep 10.01
+H 5 5 5 
+H 5 5 6.12246 

@@ -1,6 +1,6 @@
 PROJECT_NAME		= md-praktikum
 PROJECT_NUMBER		= 
-OUTPUT_DIRECTORY	= api-doc
-INPUT			= .
+OUTPUT_DIRECTORY	= doc
+INPUT			= include/
 RECURSIVE 		= YES
 USE_MATHJAX 		= YES

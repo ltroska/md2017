@@ -1,13 +1,13 @@
 #include <cstdlib>
 #include <iostream>
-#include <cstdio>
 
 #include "world.hpp"
 #include "gravitypotential.hpp"
 #include "velocityverlet.hpp"
-#include "observer.hpp"
 
 int main(int argc, char *argv[]) {
+
+  std::cout << "DIMS " << DIM << std::endl;
 
   // check arguments
   if (argc < 2) {
