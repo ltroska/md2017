@@ -17,7 +17,7 @@ public:
      *
      * @param _W
      */
-    Observer(World& _W);
+    Observer(World& _W, std::string const& out_prefix);
 
     /**
      * @brief destructor
@@ -49,11 +49,14 @@ public:
 protected:
     /// The world we are observing
     World &W;
+
+    std::string output_prefix;
+
     /// Statistics filestream
     std::ofstream statistics;
-    /// coordiantes filestream
+    /// coordinates filestream
     std::ofstream coordinates;
-
+    /// xyz filestream
     std::ofstream xyz_out;
 
 private:

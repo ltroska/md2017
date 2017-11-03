@@ -1,14 +1,10 @@
 *.o
 *.d
 api-doc
+doc
 tags
 
-blatt1
-blatt2
-
-*.coordinates
-*.statistics
 
 *build*
-
+.*
 .idea/

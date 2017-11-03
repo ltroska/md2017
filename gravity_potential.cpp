@@ -7,8 +7,6 @@
 
 int main(int argc, char *argv[]) {
 
-  std::cout << "DIMS " << DIM << std::endl;
-
   // check arguments
   if (argc < 2) {
     std::cerr << "error: missing arguments" << std::endl;
@@ -33,7 +31,7 @@ int main(int argc, char *argv[]) {
   W.read_Particles(argv[2]);
 
   // create the Observer
-  Observer O(W);
+  Observer O(W, "../output/");
 
   // instanciate timediscretization 
   // remark: & is used to get the address of Pot

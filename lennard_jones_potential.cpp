@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
     std::cout << W << std::endl;
 
     // create the Observer
-    Observer O(W);
+    Observer O(W, "../output/");
 
     // instanciate timediscretization
     // remark: & is used to get the address of Pot

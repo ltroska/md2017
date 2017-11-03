@@ -1,10 +1,10 @@
 Build the skeleton using
 
-   make
+   mkdir build && cd build && cmake .. && make
 
 Execute the program using
 
-   ./blatt1
+   <executable> <parameters_file> <particle_file>
 
 Generate the documentation using Doxygen
 
@@ -12,5 +12,5 @@ Generate the documentation using Doxygen
 
 Read the documentation with a Browser in
 
-   api-doc/html/index.html
+   doc/html/index.html
 
