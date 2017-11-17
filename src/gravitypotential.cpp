@@ -2,21 +2,18 @@
 #include <cmath>
 #include <iostream>
 
-real GravityPotential::force(Particle &p, Particle &q, real distance = 0)
+real GravityPotential::force(Particle &p, Particle &q, real cutoff_sq, real difference_offset[DIM])
 {
     real diff[DIM];
     real r_sq = 0;
 
     for (std::size_t d = 0; d < DIM; ++d) {
-        diff[d] = q.x[d] - p.x[d];
-        r_sq += diff[d] * diff[d];
+        diff[d] = q.x[d] - (p.x[d] + difference_offset[d]);
+        r_sq += sqr(diff[d]);
     }
 
-    if (r_sq > r_cutoff_sq) {
-
-        std::cout << "cutoff" << std::endl;
+    if (r_sq > cutoff_sq)
         return 0;
-    }
 
     const auto r = std::sqrt(r_sq);
 
@@ -26,8 +23,7 @@ real GravityPotential::force(Particle &p, Particle &q, real distance = 0)
 
     for (std::size_t d = 0; d < DIM; ++d) {
         p.F[d] += factor * diff[d];
-        q.F[d] -= factor * diff[d];
     }
 
-    return potential;
+    return 0.5*potential;
 }

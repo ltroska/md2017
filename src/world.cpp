@@ -182,9 +182,9 @@ std::size_t World::get_cell_index(Particle const &p) {
         if (p.x[d] < 0) {
             switch(lower_border[d]) {
                 // probably dont need periodic case here
-                case periodic:
-                    new_index[d] = n_cells[d] - 1;
-                    break;
+//                case periodic:
+//                    new_index[d] = n_cells[d] - 1;
+//                    break;
                 case unknown:
                     new_index[d] = 0;
                     break;
@@ -194,9 +194,9 @@ std::size_t World::get_cell_index(Particle const &p) {
         } else if (p.x[d] > length[d]) {
             switch(upper_border[d]) {
                 // probably dont need periodic case here
-                case periodic:
-                    new_index[d] = 0;
-                    break;
+//                case periodic:
+//                    new_index[d] = 0;
+//                    break;
                 case unknown:
                     new_index[d] = n_cells[d] - 1;
                     break;
