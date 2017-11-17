@@ -3,6 +3,7 @@
 
 #include "defines.hpp"
 #include <cstdlib>
+#include <cmath>
 
 /**
  * @brief Particle data

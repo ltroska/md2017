@@ -5,9 +5,12 @@
 #ifndef MD2017_BORDERTYPE_HPP
 #define MD2017_BORDERTYPE_HPP
 
+extern char *BorderTypes[];
+
 enum BorderType {
     unknown = 0,
-    leaving = 1
+    leaving,
+    periodic
 };
 
 #endif //MD2017_BORDERTYPE_HPP

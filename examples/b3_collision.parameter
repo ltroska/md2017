@@ -1,0 +1,7 @@
+name b3_collision
+delta_t 0.001
+t_end 3
+cell_r_cut 2.5
+length 152 57 5
+upper_border leaving leaving leaving
+lower_border leaving leaving leaving

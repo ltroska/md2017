@@ -53,9 +53,11 @@ void Observer::output_coordinates()
 {
     // write coordinates into the filestream, separated with tabulars
     coordinates << W.t << "\t";
-    for (auto &p : W.particles) {
-        for (std::size_t d = 0; d < DIM; ++d) {
-            coordinates << p.x[d] << "\t";
+    for (auto &c : W.cells) {
+        for (auto &p : c.particles) {
+            for (std::size_t d = 0; d < DIM; ++d) {
+                coordinates << p.x[d] << "\t";
+            }
         }
     }
     
@@ -65,19 +67,21 @@ void Observer::output_coordinates()
 void Observer::output_xyz()
 {
     // write coordinates into the filestream, separated with tabulars
-    xyz_out << W.particles.size() << "\n";
+    xyz_out << W.n_total_particles << "\n";
     xyz_out << "timestep " << W.t << "\n";
 
-    for (auto &p : W.particles) {
-        xyz_out << "H ";
-        for (std::size_t d = 0; d < DIM; ++d) {
-            xyz_out << p.x[d] << " ";
+    for (auto &c : W.cells) {
+        for (auto &p : c.particles) {
+            xyz_out << "H ";
+
+            for (std::size_t d = 0; d < DIM; ++d) {
+                xyz_out << p.x[d] << " ";
+            }
+
+            if (DIM == 2)
+                xyz_out << 0 << " ";
+            xyz_out << "\n";
         }
-
-        if (DIM == 2)
-            xyz_out << 0 << " ";
-        xyz_out << "\n";
-
     }
 }
 

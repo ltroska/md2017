@@ -16,7 +16,9 @@ public:
      *
      * @return potential energy
      */
-    virtual real force(Particle &p, Particle &q) = 0;
+    virtual real force(Particle &p, Particle &q, real distance_sq) = 0;
+
+    real r_cutoff_sq;
 };
 
 #endif // _POTENTIAL_HPP

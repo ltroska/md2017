@@ -16,7 +16,7 @@ public:
      *
      * @return potential energy
      */
-    virtual real force(Particle &p, Particle &q);
+    virtual real force(Particle &p, Particle &q, real distance_sq);
 };
 
 #endif // _GRAVITYPOTENTIAL_HPP

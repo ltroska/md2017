@@ -10,21 +10,23 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -Wall")
 
 file(GLOB SOURCES "${CMAKE_SOURCE_DIR}/src/*.cpp")
 
-add_library(lib ${SOURCES})
+add_library(lib_2d ${SOURCES})
+add_library(lib_3d ${SOURCES})
+set_target_properties(lib_3d PROPERTIES COMPILE_FLAGS "-DMD_HAVE_3D")
 
 file(GLOB MAINS "${CMAKE_SOURCE_DIR}/*.cpp")
 
 foreach(SOURCE ${MAINS})
     get_filename_component(NAME ${SOURCE} NAME_WE)
     add_executable(${NAME}_2d ${SOURCE})
-    target_link_libraries(${NAME}_2d lib)
+    target_link_libraries(${NAME}_2d lib_2d)
 endforeach()
 
 foreach(SOURCE ${MAINS})
     get_filename_component(NAME ${SOURCE} NAME_WE)
     add_executable(${NAME}_3d ${SOURCE})
     target_compile_definitions(${NAME}_3d PUBLIC -DMD_HAVE_3D)
-    target_link_libraries(${NAME}_3d lib)
+    target_link_libraries(${NAME}_3d lib_3d)
 endforeach()
 
 find_package(Doxygen)

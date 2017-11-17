@@ -56,10 +56,6 @@ public:
      */
     virtual void update_X();   \
 
-    /**
-     * @brief handles the borders
-     */
-    virtual void handle_borders();
 
 protected:
     // data structures inherited from TimeDiscretization

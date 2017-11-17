@@ -24,11 +24,11 @@ int main(int argc, char *argv[]) {
   // read Parameters
   W.read_Parameter(argv[1]);
 
-  // print World configuration
-  std::cout << W << std::endl;
-
   // read Particles
   W.read_Particles(argv[2]);
+
+  // print World configuration
+  std::cout << W << std::endl;
 
   // create the Observer
   Observer O(W, "../output/");

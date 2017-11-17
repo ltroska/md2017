@@ -1,0 +1,8 @@
+name b3_periodic
+delta_t 0.001
+t_end 1
+cell_r_cut 4.5
+length 60 120 7.5
+upper_border periodic periodic periodic
+lower_border periodic periodic periodic
+

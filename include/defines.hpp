@@ -23,9 +23,14 @@
 // define the dimension of the particles
 #ifdef MD_HAVE_3D
 #define DIM 3
+#define NUM_NEIGHBORS 27
 #else
 #define DIM 2
+#define NUM_NEIGHBORS 9
 #endif
+
+extern int neighbor_offsets[NUM_NEIGHBORS][DIM];
+
 // reals in double precision
 typedef double real;
 // squre define

@@ -4,11 +4,14 @@
 #include "defines.hpp"
 #include "particle.hpp"
 #include "bordertype.hpp"
+#include "cell.hpp"
 #include <vector>
 #include <string>
 #include <iostream>
 #include <fstream>
 #include <array>
+#include <cmath>
+#include <tuple>
 
 /**
  * @brief the world class holds all information of the simulation environment
@@ -37,6 +40,26 @@ public:
      */
     void read_Particles(const std::string &filename);
 
+#ifdef MD_HAVE_3D
+    inline std::size_t get_linear_index(std::size_t i, std::size_t j, std::size_t k) {
+        return i + n_cells[0]*(j + n_cells[1]*k);
+    }
+
+    inline std::size_t get_linear_index(std::size_t idx[3]) {
+        return get_linear_index(idx[0], idx[1], idx[2]);
+    }
+#else
+    inline std::size_t get_linear_index(std::size_t i, std::size_t j) {
+        return i + n_cells[0] * j;
+    }
+
+    inline std::size_t get_linear_index(std::size_t idx[2]) {
+        return get_linear_index(idx[0], idx[1]);
+    }
+#endif
+
+    std::size_t get_cell_index(Particle const& p);
+
     // data structures
     /// Name of the simulated world
     std::string name;
@@ -46,14 +69,27 @@ public:
     real delta_t;
     /// End of simulation
     real t_end;
+    /// cutoff
+    real cell_r_cut;
+    real cell_r_cut_sq;
     /// kinetic energy
     real e_kin;
     /// potential energy
     real e_pot;
     /// total energy
     real e_tot;
-    /// Vector of particles
-    std::vector<Particle> particles;
+
+
+    std::size_t n_total_particles;
+    /// Vector of cells
+    std::vector<Cell> cells;
+    /// Number of cells in each dimension
+    std::size_t n_cells[DIM];
+
+    std::size_t n_total_cells;
+    /// Length of each cell dimension
+    real cell_length[DIM];
+
 
     std::array<double, DIM> length;
 
