@@ -85,7 +85,7 @@ void VelocityVerlet::comp_F() {
 
                 // compute force
                 for (auto &q : W.cells[neighbor_cell_linear_index].particles) {
-                    if (p.id != q.id) {
+                    if (p.id < q.id) {
                         distance_sqr = 0;
 
                         for (std::size_t d = 0; d < DIM; ++d) {

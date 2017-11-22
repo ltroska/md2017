@@ -23,7 +23,8 @@ real GravityPotential::force(Particle &p, Particle &q, real cutoff_sq, real diff
 
     for (std::size_t d = 0; d < DIM; ++d) {
         p.F[d] += factor * diff[d];
+        q.F[d] -= factor * diff[d];
     }
 
-    return 0.5*potential;
+    return potential;
 }

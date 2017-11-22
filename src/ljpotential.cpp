@@ -33,9 +33,10 @@ real LJPotential::force(Particle& p, Particle &q, real cutoff_sq, real differenc
   for (std::size_t i = 0; i<DIM; ++i) {
     force[i]= temp * difference[i]; // only multiplying with direction, rest already in temp.
     p.F[i] += force[i];
+    q.F[i] -= force[i];
   }
 
-  return 0.5*potential;
+  return potential;
 }
 
 // vim:set et sts=4 ts=4 sw=4 ai ci cin:
