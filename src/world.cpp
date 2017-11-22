@@ -176,7 +176,7 @@ void World::read_Particles(const std::string &filename)
 }
 
 std::size_t World::get_cell_index(Particle const &p) {
-    std::size_t new_index[DIM];
+    std::size_t new_index[DIM] = {0};
 
     for (std::size_t d = 0; d < DIM; ++d) {
         if (p.x[d] < 0) {
@@ -190,6 +190,8 @@ std::size_t World::get_cell_index(Particle const &p) {
                     break;
                 case leaving:
                     return n_total_cells;
+                default:
+                    return -1;
             }
         } else if (p.x[d] > length[d]) {
             switch(upper_border[d]) {
@@ -202,6 +204,8 @@ std::size_t World::get_cell_index(Particle const &p) {
                     break;
                 case leaving:
                     return n_total_cells;
+                default:
+                    return -1;
             }
 
         }

@@ -1,5 +1,7 @@
 #include "velocityverlet.hpp"
 
+extern int neighbor_offsets[NUM_NEIGHBORS][DIM];
+
 VelocityVerlet::VelocityVerlet(World& _W, Potential& _Pot, Observer& _O) : TimeDiscretization(_W,_Pot,_O)
 {
     // empty constructor
