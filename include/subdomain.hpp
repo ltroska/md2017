@@ -1,5 +1,5 @@
-#ifndef _WORLD_HPP
-#define _WORLD_HPP
+#ifndef _SUBDOMAIN_HPP
+#define _SUBDOMAIN_HPP
 
 #include "defines.hpp"
 #include "particle.hpp"
@@ -16,9 +16,9 @@
 /**
  * @brief the world class holds all information of the simulation environment
  */
-class World {
+class SubDomain {
 public:
-    World();
+    SubDomain();
 
     /**
      * @brief read the world parameters from the given parameter file
@@ -98,14 +98,14 @@ public:
 };
 
 /**
- * @brief a ostream operator for the World class
+ * @brief a ostream operator for the SubDomain class
  *
  * @param os stream object
  * @param W the world
  *
  * @return resulting stream object
  */
-std::ostream& operator << (std::ostream& os, World& W);
+std::ostream& operator << (std::ostream& os, SubDomain& W);
 
 #endif // _WORLD_HPP
 // vim:set et sts=4 ts=4 sw=4 ai ci cin:

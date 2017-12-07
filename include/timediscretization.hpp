@@ -1,7 +1,7 @@
 #ifndef _TIMEDISCRETIZATION_HPP
 #define _TIMEDISCRETIZATION_HPP
 
-#include "world.hpp"
+#include "subdomain.hpp"
 #include "potential.hpp"
 #include "observer.hpp"
 #include <iostream>
@@ -14,11 +14,11 @@ public:
     /**
      * @brief constructor
      *
-     * @param _W world configuration
+     * @param _S world configuration
      * @param _Pot potential used for force calculation
      * @param _O Observer of the simulation
      */
-    TimeDiscretization(World& _W, Potential& _Pot, Observer& _O);
+    TimeDiscretization(SubDomain& _S, Potential& _Pot, Observer& _O);
 
     /**
      * @brief run a single timestep
@@ -50,7 +50,7 @@ public:
 protected:
     // data structures
     /// the world where the particles live in
-    World &W;
+    SubDomain &W;
     /// the potential used for force calculation
     Potential& Pot;
     /// the observer of the simulation

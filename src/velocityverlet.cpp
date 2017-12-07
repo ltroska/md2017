@@ -2,12 +2,12 @@
 
 extern int neighbor_offsets[NUM_NEIGHBORS][DIM];
 
-VelocityVerlet::VelocityVerlet(World& _W, Potential& _Pot, Observer& _O) : TimeDiscretization(_W,_Pot,_O)
+VelocityVerlet::VelocityVerlet(SubDomain& _S, Potential& _Pot, Observer& _O) : TimeDiscretization(_S,_Pot,_O)
 {
     // empty constructor
 }
 
-VelocityVerlet::VelocityVerlet(World& _W, Potential* _Pot, Observer& _O) : TimeDiscretization(_W,(*_Pot),_O)
+VelocityVerlet::VelocityVerlet(SubDomain& _S, Potential* _Pot, Observer& _O) : TimeDiscretization(_S,(*_Pot),_O)
 {
 }
 

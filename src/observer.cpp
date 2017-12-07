@@ -1,6 +1,6 @@
 #include "observer.hpp"
 
-Observer::Observer(World &_W, std::string const& out_prefix = "") : W(_W), output_prefix(out_prefix)
+Observer::Observer(SubDomain &_S, std::string const& out_prefix = "") : W(_S), output_prefix(out_prefix)
 {
     // open statistics file
     std::string statistics_filename = output_prefix + W.name + ".statistics";

@@ -1,7 +1,7 @@
 #ifndef _OBSERVER_HPP
 #define _OBSERVER_HPP
 
-#include "world.hpp"
+#include "subdomain.hpp"
 #include <iostream>
 #include <fstream>
 
@@ -15,9 +15,9 @@ public:
      *
      * opens and creates the files written during observation
      *
-     * @param _W
+     * @param _S
      */
-    Observer(World& _W, std::string const& out_prefix);
+    Observer(SubDomain& _S, std::string const& out_prefix);
 
     /**
      * @brief destructor
@@ -48,7 +48,7 @@ public:
 
 protected:
     /// The world we are observing
-    World &W;
+    SubDomain &W;
 
     std::string output_prefix;
 

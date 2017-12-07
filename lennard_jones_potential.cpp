@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "world.hpp"
+#include "subdomain.hpp"
 #include "ljpotential.hpp"
 #include "velocityverlet.hpp"
 
@@ -18,24 +18,24 @@ int main(int argc, char *argv[]) {
     // instanciate Potential
     LJPotential Pot;
 
-    // create Worldtest
-    World W;
+    // create World
+    SubDomain S;
 
     // read Parameters
-    W.read_Parameter(argv[1]);
+    S.read_Parameter(argv[1]);
 
     // read Particles
-    W.read_Particles(argv[2]);
+    S.read_Particles(argv[2]);
 
-    // print World configuration
-    std::cout << W << std::endl;
+    // print SubDomain configuration
+    std::cout << S << std::endl;
 
     // create the Observer
-    Observer O(W, "../output/");
+    Observer O(S, "../output/");
 
     // instanciate timediscretization
     // remark: & is used to get the address of Pot
-    VelocityVerlet Verlet(W, &Pot, O);
+    VelocityVerlet Verlet(S, &Pot, O);
 
     // run the simulation
     Verlet.simulate();
@@ -43,4 +43,4 @@ int main(int argc, char *argv[]) {
     return EXIT_SUCCESS;
 }
 
-// vim:set et sts=2 ts=2 sw=2 ai ci cin:
+// vim:set et sts=2 ts=2 sS=2 ai ci cin:

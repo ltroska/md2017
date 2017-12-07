@@ -1,10 +1,10 @@
-#include "world.hpp"
+#include "subdomain.hpp"
 #include <stdexcept>
 #include <sstream>
 #include <cmath>
 #include <limits>
 
-World::World() : name("unknown"),t(0),delta_t(0),t_end(0),cell_r_cut(0), cell_r_cut_sq(0), e_kin(0),e_pot(0),e_tot(0),
+SubDomain::SubDomain() : name("unknown"),t(0),delta_t(0),t_end(0),cell_r_cut(0), cell_r_cut_sq(0), e_kin(0),e_pot(0),e_tot(0),
                  n_total_particles(0)
 {
     for (std::size_t d = 0; d < DIM; ++d) {
@@ -15,7 +15,7 @@ World::World() : name("unknown"),t(0),delta_t(0),t_end(0),cell_r_cut(0), cell_r_
 
 }
 
-void World::read_Parameter(const std::string &filename)
+void SubDomain::read_Parameter(const std::string &filename)
 {
     // create input filestream
     std::ifstream parfile(filename.c_str());
@@ -127,7 +127,7 @@ void World::read_Parameter(const std::string &filename)
 
 }
 
-void World::read_Particles(const std::string &filename)
+void SubDomain::read_Particles(const std::string &filename)
 {
     // create input filestream
     std::ifstream parfile(filename.c_str());
@@ -175,7 +175,7 @@ void World::read_Particles(const std::string &filename)
     parfile.close();
 }
 
-std::size_t World::get_cell_index(Particle const &p) {
+std::size_t SubDomain::get_cell_index(Particle const &p) {
     std::size_t new_index[DIM] = {0};
 
     for (std::size_t d = 0; d < DIM; ++d) {
@@ -217,7 +217,7 @@ std::size_t World::get_cell_index(Particle const &p) {
     return get_linear_index(new_index);
 }
 
-std::ostream& operator << (std::ostream& os, World& W) {
+std::ostream& operator << (std::ostream& os, SubDomain& W) {
     os << "t=" << W.t << " delta_t=" << W.delta_t << " t_end=" << W.t_end
        << "\ncutoff=" << W.cell_r_cut << " cutoff_sq=" << W.cell_r_cut_sq
        << "\nNumber of Particles=" << W.n_total_particles << " Number of Cells=" << W.cells.size();

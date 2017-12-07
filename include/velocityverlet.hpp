@@ -11,11 +11,11 @@ public:
     /**
      * @brief constructor
      *
-     * @param _W world configuration
+     * @param _S world configuration
      * @param _Pot potential used for force calculation
      * @param _O Observer of the simulation
      */
-    VelocityVerlet(World& _W, Potential& _Pot, Observer &_O);
+    VelocityVerlet(SubDomain& _S, Potential& _Pot, Observer &_O);
 
     /**
      * @brief constructor
@@ -23,11 +23,11 @@ public:
      * This is an example for Constructor overloading. If you have read until
      * here you can use the other constructor and change the blatt1 main function.
      *
-     * @param _W world configuration
+     * @param _S world configuration
      * @param _Pot potential used for force calculation
      * @param _O Observer of the simulation
      */
-    VelocityVerlet(World& _W, Potential* _Pot, Observer &_O);
+    VelocityVerlet(SubDomain& _S, Potential* _Pot, Observer &_O);
 
     /**
      * @brief run a single timestep
