@@ -1,22 +1,48 @@
 #include "subdomain.hpp"
+#include "logging.hpp"
+
 #include <stdexcept>
 #include <sstream>
 #include <cmath>
 #include <limits>
 
-SubDomain::SubDomain() : name("unknown"),t(0),delta_t(0),t_end(0),cell_r_cut(0), cell_r_cut_sq(0), e_kin(0),e_pot(0),e_tot(0),
-                 n_total_particles(0)
+#ifdef MD_HAVE_3D
+    const std::size_t all_but[DIM][DIM - 1] = {{2, 1}, {2, 0}, {1, 0}};
+#else
+	const std::size_t all_but[DIM][DIM - 1] = {{1}, {0}};
+#endif
+
+#ifdef MD_HAVE_3D
+#define LOOP_INDEX_OVER_FACE(_index, _limits, _normal_dim, _code)\
+	for(std::size_t __id0 = _limits[all_but[_normal_dim][0]][0]; __id0 < _limits[all_but[_normal_dim][0]][1]; ++__id0) {\
+		for(std::size_t __id1 = _limits[all_but[_normal_dim][1]][0]; __id1 < _limits[all_but[_normal_dim][1]][1]; ++__id1) {\
+			_index[all_but[_normal_dim][0]]=__id0;\
+			_index[all_but[_normal_dim][1]]=__id1;\
+			_code\
+		}\
+	}
+#else
+#define LOOP_INDEX_OVER_FACE(_index, _limits, _normal_dim, _code)\
+	for(std::size_t __id = _limits[all_but[_normal_dim][0]][0]; __id < _limits[all_but[_normal_dim][0]][1]; ++__id) {\
+			_index[all_but[_normal_dim][0]]=__id;\
+			_code\
+	}
+#endif
+
+SubDomain::SubDomain(int r, int n) : rank(r), np(n), name("unknown"),t(0),delta_t(0),t_end(0),cell_r_cut(0), cell_r_cut_sq(0), e_kin(0),e_pot(0),e_tot(0),
+                 n_total_particles(0), sigma(0), numprocs({0})
 {
     for (std::size_t d = 0; d < DIM; ++d) {
         upper_border[d] = unknown;
         lower_border[d] = unknown;
-        length[d] = 0;
+        total_length[d] = 0;
     }
 
 }
 
 void SubDomain::read_Parameter(const std::string &filename)
 {
+
     // create input filestream
     std::ifstream parfile(filename.c_str());
     // check if file is open
@@ -48,11 +74,18 @@ void SubDomain::read_Parameter(const std::string &filename)
             strstr >> name;
         if (option=="length") {
             for (std::size_t d = 0; d < DIM; ++d) {
-                strstr >> length[d];
+                strstr >> total_length[d];
             }
         }
+
         if (option=="cell_r_cut") {
             strstr >> cell_r_cut;
+        }
+        if (option=="sigma") {
+            strstr >> sigma;
+        }
+        if (option=="output_interval") {
+            strstr >> output_interval;
         }
 
         std::string tmp;
@@ -75,21 +108,76 @@ void SubDomain::read_Parameter(const std::string &filename)
                     lower_border[d] = periodic;
             }
         }
+
+        if (option=="num_procs") {
+            for (std::size_t d = 0; d < DIM; ++d)
+                strstr >> numprocs[d];
+        }
     }
     // close file
     parfile.close();
 
-    // if cutoff or length not set
+    for (std::size_t d = 0; d < DIM; ++d) {
+        //numprocs[d] = (int) std::round(std::pow(np, 1. / DIM));
+        ghost_border_width[d] = 1;
+    }
+
+    from_linear_proc_index(rank, indices);
+
+    for (std::size_t d = 0; d < DIM; ++d) {
+        length[d] = total_length[d] / numprocs[d];
+
+        offset[d] = indices[d] * length[d];
+    }
+
+    std::size_t neighbor_index[DIM];
+    for (std::size_t d = 0; d < DIM; ++d) {
+        for (std::size_t j = 0; j < DIM; ++j)
+            neighbor_index[j] = indices[j];
+
+        if (indices[d] == 0) {
+            if (lower_border[d] == periodic) {
+                neighbor_index[d] = numprocs[d] - 1;
+                neighbors[d][0] = to_linear_proc_index(neighbor_index);
+            } else {
+                neighbors[d][0] = -1;
+            }
+        }
+        else {
+            neighbor_index[d] = indices[d] - 1;
+
+            neighbors[d][0] = to_linear_proc_index(neighbor_index);
+        }
+
+        if (indices[d] == numprocs[d] - 1) {
+            if (upper_border[d] == periodic) {
+                neighbor_index[d] = 0;
+                neighbors[d][1] = to_linear_proc_index(neighbor_index);
+            }
+            else {
+                neighbors[d][1] = -1;
+            }
+        }
+        else {
+            neighbor_index[d] = indices[d] + 1;
+
+            neighbors[d][1] = to_linear_proc_index(neighbor_index);
+        }
+
+        LOG_DBG_RANK(rank, d << " low " << neighbors[d][0] << " high " << neighbors[d][1]);
+    }
+
+    // if cutoff or total_length not set
     for (std::size_t d = 0; d < DIM; ++d) {
         if (cell_r_cut == 0) {
             cell_length[d] = length[d];
         } else
             cell_length[d] = cell_r_cut;
 
-        if (length[d] == 0)
-            n_cells[d] = 1;
+        if (total_length[d] == 0)
+            n_cells[d] = 1 + 2*ghost_border_width[d];
         else
-            n_cells[d] = std::ceil(length[d] / cell_length[d]);
+            n_cells[d] = std::ceil(length[d] / cell_length[d]) + 2*ghost_border_width[d];
     }
 
     if (cell_r_cut == 0) {
@@ -99,11 +187,15 @@ void SubDomain::read_Parameter(const std::string &filename)
         cell_r_cut_sq = cell_r_cut * cell_r_cut;
     }
 
-
     n_total_cells = 1;
 
     for(std::size_t d = 0; d < DIM; ++d)
         n_total_cells *= n_cells[d];
+
+    LOG_DBG_RANK(rank, "total cells: " << n_total_cells);
+    LOG_DBG_RANK(rank, "cells: " << n_cells[0] << " " << n_cells[1] << " " << n_cells[2]);
+    LOG_DBG_RANK(rank, "cell length: " << cell_length[0] << " " << cell_length[1] << " " << cell_length[2]);
+    LOG_DBG_RANK(rank, "offset: " << offset[0] << " " << offset[1] << " " << offset[2]);
 
     cells.resize(n_total_cells);
 
@@ -129,6 +221,8 @@ void SubDomain::read_Parameter(const std::string &filename)
 
 void SubDomain::read_Particles(const std::string &filename)
 {
+    MPI_PARTICLE = setup_particle_mpi_type();
+
     // create input filestream
     std::ifstream parfile(filename.c_str());
     // check if file is open
@@ -157,19 +251,23 @@ void SubDomain::read_Particles(const std::string &filename)
 
             for (std::size_t d = 0; d < DIM; ++d) {
                 strstr >> part.x[d];
+                part.F[d] = 0;
+                part.F_old[d] = 0;
             }
 
             for (std::size_t d = 0; d < DIM; ++d) {
                 strstr >> part.v[d];
             }
 
-            auto const cell_index = get_cell_index(part);
+            if(is_in_domain(part)) {
+                auto const cell_index = get_cell_index(part);
 
-            cells[cell_index].particles.emplace_back(std::move(part));
-
-            ++n_total_particles;
+                cells[cell_index].particles.emplace_back(std::move(part));
+            }
         }
     }
+
+    LOG_DBG_RANK(rank, "total particles: " << n_total_particles);
 
     // close file
     parfile.close();
@@ -179,42 +277,203 @@ std::size_t SubDomain::get_cell_index(Particle const &p) {
     std::size_t new_index[DIM] = {0};
 
     for (std::size_t d = 0; d < DIM; ++d) {
-        if (p.x[d] < 0) {
-            switch(lower_border[d]) {
-                // probably dont need periodic case here
-//                case periodic:
-//                    new_index[d] = n_cells[d] - 1;
-//                    break;
-                case unknown:
-                    new_index[d] = 0;
-                    break;
-                case leaving:
-                    return n_total_cells;
-                default:
-                    return -1;
-            }
-        } else if (p.x[d] > length[d]) {
-            switch(upper_border[d]) {
-                // probably dont need periodic case here
-//                case periodic:
-//                    new_index[d] = 0;
-//                    break;
-                case unknown:
-                    new_index[d] = n_cells[d] - 1;
-                    break;
-                case leaving:
-                    return n_total_cells;
-                default:
-                    return -1;
-            }
-
-        }
-        else {
-            new_index[d] = std::floor(p.x[d] / cell_length[d]);
-        }
+        new_index[d] = std::floor((p.x[d] - offset[d] + ghost_border_width[d]*cell_length[d]) / cell_length[d]);
     }
 
     return get_linear_index(new_index);
+}
+
+void SubDomain::communicate_boundary() {
+    std::size_t limits[DIM][2];
+    std::size_t index[DIM];
+    std::size_t cell_index;
+    std::size_t ghost_index;
+    int num = 0;
+    int tag = 0;
+    MPI_Status status;
+    MPI_Request req;
+    
+    for (std::size_t d = 0; d < DIM; ++d) {
+        limits[d][0] = ghost_border_width[d];
+        limits[d][1] = n_cells[d] - ghost_border_width[d];
+    }
+    
+    for (std::size_t d = 0; d < DIM; ++d) {
+
+        LOOP_INDEX_OVER_FACE(index, limits, d,
+                             tag = indices[all_but[d][0]];
+
+                             for (std::size_t j = 1; j < DIM - 1; ++j) {
+                                 tag = tag*n_cells[all_but[d][j]] + indices[all_but[d][j]];
+                             }
+
+                                 // first half step
+                                 //
+                                 if (neighbors[d][0] >= 0) {
+
+                                    index[d] = ghost_border_width[d];
+                                    cell_index = get_linear_index(index);
+
+                                     MPI_Isend(&cells[cell_index].particles[0], cells[cell_index].particles.size(),
+                                               MPI_PARTICLE, neighbors[d][0], tag, MPI_COMM_WORLD, &req);
+                                     MPI_Request_free(&req);
+                                 }
+
+                                 if (neighbors[d][1] >= 0) {
+
+                                     index[d] = n_cells[d] - 1;
+                                     ghost_index = get_linear_index(index);
+
+
+                                     MPI_Probe(neighbors[d][1], tag, MPI_COMM_WORLD, &status);
+                                     MPI_Get_count(&status, MPI_PARTICLE, &num);
+
+                                     cells[ghost_index].particles.resize(num);
+
+
+                                     MPI_Recv(&cells[ghost_index].particles[0], num, MPI_PARTICLE, neighbors[d][1], tag,
+                                              MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+
+                                 }
+                                 // second half step
+                                 if (neighbors[d][1] >= 0) {
+
+                                     index[d] = n_cells[d] - 1 - ghost_border_width[d];
+                                     cell_index = get_linear_index(index);
+
+
+                                     MPI_Isend(&cells[cell_index].particles[0], cells[cell_index].particles.size(),
+                                               MPI_PARTICLE, neighbors[d][1], tag, MPI_COMM_WORLD, &req);
+                                     MPI_Request_free(&req);
+                                 }
+
+                                 if (neighbors[d][0] >= 0) {
+
+                                     index[d] = 0;
+                                     ghost_index = get_linear_index(index);
+
+                                     MPI_Probe(neighbors[d][0], tag, MPI_COMM_WORLD, &status);
+                                     MPI_Get_count(&status, MPI_PARTICLE, &num);
+
+                                     cells[ghost_index].particles.resize(num);
+
+                                     MPI_Recv(&cells[ghost_index].particles[0], num, MPI_PARTICLE, neighbors[d][0], tag,
+                                              MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+
+                                 }
+
+        );
+        limits[d][0] = 0;
+        limits[d][1] = n_cells[d];
+
+    }
+}
+
+void SubDomain::communicate_ghostborder() {
+    std::size_t limits[DIM][2];
+    std::size_t index[DIM];
+    std::size_t cell_index;
+    std::size_t ghost_index;
+    std::size_t old_particle_size;
+    int num = 0;
+    int tag = 0;
+    MPI_Status status;
+    MPI_Request req;
+
+    for (std::size_t d = 0; d < DIM; ++d) {
+        limits[d][0] = 0;
+        limits[d][1] = n_cells[d];
+    }
+
+    for (std::size_t d = 0; d < DIM; ++d) {
+        LOOP_INDEX_OVER_FACE(index, limits, d,
+                             tag = indices[all_but[d][0]];
+
+                                 for (std::size_t j = 1; j < DIM - 1; ++j) {
+                                     tag = tag*n_cells[all_but[d][j]] + indices[all_but[d][j]];
+                                 }
+
+                                 // first half step
+                                 //
+                                 if (neighbors[d][0] >= 0) {
+
+                                     index[d] = 0;
+                                     ghost_index = get_linear_index(index);
+
+                                     MPI_Isend(&cells[ghost_index].particles[0], cells[ghost_index].particles.size(),
+                                               MPI_PARTICLE, neighbors[d][0], tag, MPI_COMM_WORLD, &req);
+                                     MPI_Request_free(&req);
+                                 }
+
+                                 if (neighbors[d][1] >= 0) {
+
+                                     index[d] = n_cells[d] - 1 - ghost_border_width[d];
+                                     cell_index = get_linear_index(index);
+
+
+                                     MPI_Probe(neighbors[d][1], tag, MPI_COMM_WORLD, &status);
+                                     MPI_Get_count(&status, MPI_PARTICLE, &num);
+
+                                     old_particle_size = cells[cell_index].particles.size();
+                                     cells[cell_index].particles.resize(old_particle_size + num);
+
+
+                                     MPI_Recv(&cells[cell_index].particles[old_particle_size], num, MPI_PARTICLE, neighbors[d][1], tag,
+                                              MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+
+                                 }
+                                 // second half step
+                                 if (neighbors[d][1] >= 0) {
+
+                                     index[d] = n_cells[d] - 1;
+                                     ghost_index = get_linear_index(index);
+
+                                     MPI_Isend(&cells[ghost_index].particles[0], cells[ghost_index].particles.size(),
+                                               MPI_PARTICLE, neighbors[d][1], tag, MPI_COMM_WORLD, &req);
+                                     MPI_Request_free(&req);
+                                 }
+
+                                 if (neighbors[d][0] >= 0) {
+                                     index[d] = ghost_border_width[d];
+                                     cell_index = get_linear_index(index);
+
+                                     MPI_Probe(neighbors[d][0], tag, MPI_COMM_WORLD, &status);
+                                     MPI_Get_count(&status, MPI_PARTICLE, &num);
+
+
+                                     old_particle_size = cells[cell_index].particles.size();
+                                     cells[cell_index].particles.resize(old_particle_size + num);
+                                     MPI_Recv(&cells[cell_index].particles[old_particle_size], num, MPI_PARTICLE, neighbors[d][0], tag,
+                                              MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+                                 }
+
+        );
+        limits[d][0] = 1;
+        limits[d][1] = n_cells[d] - ghost_border_width[d];
+    }
+}
+
+void SubDomain::clear_ghostborder() {
+    std::size_t limits[DIM][2];
+    std::size_t index[DIM];
+    std::size_t ghost_index;
+
+    for (std::size_t d = 0; d < DIM; ++d) {
+        limits[d][0] = 0;
+        limits[d][1] = n_cells[d];
+    }
+
+    for (std::size_t d = 0; d < DIM; ++d) {
+        LOOP_INDEX_OVER_FACE(index, limits, d,
+                              index[d] = 0;
+                             ghost_index = get_linear_index(index);
+                             cells[ghost_index].particles.clear();
+
+                             index[d] = n_cells[d] - 1;
+                             ghost_index = get_linear_index(index);
+                             cells[ghost_index].particles.clear();
+        );
+    }
 }
 
 std::ostream& operator << (std::ostream& os, SubDomain& W) {
@@ -226,9 +485,9 @@ std::ostream& operator << (std::ostream& os, SubDomain& W) {
     for (std::size_t d = 0; d < DIM; ++d)
         os << W.n_cells[d] << " ";
 
-    os  << "\nlength: ";
+    os  << "\ntotal_length: ";
     for (std::size_t d = 0; d < DIM; ++d)
-        os << W.length[d] << " ";
+        os << W.total_length[d] << " ";
 
 
 

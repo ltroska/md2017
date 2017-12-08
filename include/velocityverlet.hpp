@@ -62,6 +62,8 @@ protected:
 
 private:
     VelocityVerlet();
+
+    std::size_t iter;
 };
 
 #endif // _VELOCITYVERLET_HPP

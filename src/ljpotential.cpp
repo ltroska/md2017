@@ -7,7 +7,6 @@ real LJPotential::force(Particle& p, Particle &q, real cutoff_sq, real differenc
 {
   real force[DIM];
   real difference[DIM];
-  real const sigma = 1.0;
   real const epsilon = 1.0;
   real potential = 0;
   real temp =0.0;

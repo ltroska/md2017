@@ -17,6 +17,8 @@ public:
      * @return potential energy
      */
     real force(Particle &p, Particle &q, real cutoff_sq = std::numeric_limits<real>::max(), real difference_offset[DIM] = {0});
+
+    real sigma;
 };
 
 #endif // _GRAVITYPOTENTIAL_HPP

@@ -2,22 +2,24 @@
 
 Observer::Observer(SubDomain &_S, std::string const& out_prefix = "") : W(_S), output_prefix(out_prefix)
 {
-    // open statistics file
-    std::string statistics_filename = output_prefix + W.name + ".statistics";
-    // open file, overwrite existing files, take no prisoners
-    statistics.open(statistics_filename.c_str());
-    // and tell the world
-    std::cout << "Opened " << statistics_filename << " for writing." << std::endl;
-
+    if (W.rank == 0) {
+        // open statistics file
+        std::string statistics_filename = output_prefix + W.name + "." + std::to_string(W.rank) + ".statistics";
+        // open file, overwrite existing files, take no prisoners
+        statistics.open(statistics_filename.c_str());
+        // and tell the world
+        std::cout << "Opened " << statistics_filename << " for writing." << std::endl;
+    }
+/*
     // open coordinates file
-    std::string coordinates_filename = output_prefix + W.name + ".coordinates";
+    std::string coordinates_filename = output_prefix + W.name + "." + std::to_string(W.rank) + ".coordinates";
     // open file, overwrite existing files, take no prisoners
     coordinates.open(coordinates_filename.c_str());
     // and tell the world
-    std::cout << "Opened " << coordinates_filename << " for writing." << std::endl;
+    std::cout << "Opened " << coordinates_filename << " for writing." << std::endl;*/
 
     // open xyz file
-    std::string xyz_filename = output_prefix + W.name + ".xyz";
+    std::string xyz_filename = output_prefix + W.name + "." + std::to_string(W.rank) + ".xyz";
     // open file, overwrite existing files, take no prisoners
     xyz_out.open(xyz_filename.c_str());
     // and tell the world
@@ -66,8 +68,14 @@ void Observer::output_coordinates()
 
 void Observer::output_xyz()
 {
+    std::size_t total_particles = 0;
+
+    for (auto &c : W.cells) {
+        total_particles += c.particles.size();
+    }
     // write coordinates into the filestream, separated with tabulars
-    xyz_out << W.n_total_particles << "\n";
+    xyz_out << total_particles << "\n";
+
     xyz_out << "timestep " << W.t << "\n";
 
     for (auto &c : W.cells) {
@@ -88,8 +96,10 @@ void Observer::output_xyz()
 void Observer::notify()
 {
     // call output functions
-    output_statistics();
-    output_coordinates();
+    if (W.rank == 0) {
+        output_statistics();
+    }
+    //output_coordinates();
     output_xyz();
 }
 

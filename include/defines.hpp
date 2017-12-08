@@ -60,34 +60,5 @@ extern int neighbor_offsets[NUM_NEIGHBORS][DIM];
 
 #define sqr(_x) ((_x)*(_x))
 
-#ifdef MD_HAVE_3D
-#define LOOP_INDEX_OVER_FACE(_index, _limits1, _limits2, _fixed_, _DIM1, _DIM2, _DIM3, _code) \
-				for (std::size_t __id1 = _limits1[0]; __id1 < _limits1[1]; ++__id1) { \
-					for (std::size_t __id2 = _limits2[0]; __id2 < _limits2[1]; ++__id2) { \
-						_index[_DIM1] = __id1;\
-						_index[_DIM2] = __id2;\
-						_index[_DIM3] = fixed;\
-						_code\
-					}\
-				}
-
-	#define LOOP_INDEX_OVER_XY_FACE(_index, _limits1, _limits2, _fixed_, _code)\
-				LOOP_INDEX_OVER_FACE(_index, _limits1, _limits2, _fixed, 0, 1, 2, _code)
-
-	#define LOOP_INDEX_OVER_XZ_FACE(_index, _limits1, _limits2, _fixed_, _code)\
-				LOOP_INDEX_OVER_FACE(_index, _limits1, _limits2, _fixed, 0, 2, 1, _code)
-
-	#define LOOP_INDEX_OVER_YZ_FACE(_index, _limits1, _limits2, _fixed_, _code)\
-				LOOP_INDEX_OVER_FACE(_index, _limits1, _limits2, _fixed, 1, 2, 0, _code)
-#else
-#define LOOP_INDEX_OVER_FACE(_index, _limits, _fixed_, _DIM1, _DIM2, _code) \
-				for (std::size_t id = _limits[0]; id1 < _limits[1]; ++id) { \
-						_index[_DIM1] = id1;\
-						_index[_DIM2] = fixed;\
-						_code\
-					}\
-				}
-#endif
-
 #endif // _DEFINES_HPP
 // vim:set et sts=4 ts=4 sw=4 ai ci cin cino=g0,t0:
