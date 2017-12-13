@@ -36,12 +36,11 @@ int main(int argc, char *argv[]) {
     MPI_Comm_size (MPI_COMM_WORLD, &numprocs);
     MPI_Comm_rank (MPI_COMM_WORLD, &rank);
 
-    LJPotential Pot;
 //
 //
     SubDomain S(rank, numprocs);
     S.read_Parameter(argv[1]);
-    Pot.sigma = S.sigma;
+    LJPotential Pot(S.sigma, S.cell_r_cut_sq);
 
     S.read_Particles(argv[2]);
 

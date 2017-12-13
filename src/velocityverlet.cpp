@@ -122,7 +122,7 @@ void VelocityVerlet::comp_F() {
                             }
                         }
 
-                        potential = Pot.force(p, q, W.cell_r_cut_sq, difference_offset);
+                        potential = Pot.force(p, q, distance_sqr, difference_offset);
                         if (!W.is_in_domain(q))
                             potential /= 2;
                         W.e_pot += potential;

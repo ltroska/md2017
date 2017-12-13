@@ -30,7 +30,7 @@
 #endif
 
 SubDomain::SubDomain(int r, int n) : rank(r), np(n), name("unknown"),t(0),delta_t(0),t_end(0),cell_r_cut(0), cell_r_cut_sq(0), e_kin(0),e_pot(0),e_tot(0),
-                 n_total_particles(0), sigma(0), numprocs({0})
+                 n_total_particles(0), sigma(0), numprocs({0}), output_interval(1)
 {
     for (std::size_t d = 0; d < DIM; ++d) {
         upper_border[d] = unknown;
@@ -192,10 +192,10 @@ void SubDomain::read_Parameter(const std::string &filename)
     for(std::size_t d = 0; d < DIM; ++d)
         n_total_cells *= n_cells[d];
 
-    LOG_DBG_RANK(rank, "total cells: " << n_total_cells);
-    LOG_DBG_RANK(rank, "cells: " << n_cells[0] << " " << n_cells[1] << " " << n_cells[2]);
-    LOG_DBG_RANK(rank, "cell length: " << cell_length[0] << " " << cell_length[1] << " " << cell_length[2]);
-    LOG_DBG_RANK(rank, "offset: " << offset[0] << " " << offset[1] << " " << offset[2]);
+    LOG(rank, "total cells: " << n_total_cells);
+    LOG(rank, "cells: " << n_cells[0] << " " << n_cells[1] << " " << n_cells[2]);
+    LOG(rank, "cell length: " << cell_length[0] << " " << cell_length[1] << " " << cell_length[2]);
+    LOG(rank, "offset: " << offset[0] << " " << offset[1] << " " << offset[2]);
 
     cells.resize(n_total_cells);
 
@@ -288,6 +288,7 @@ void SubDomain::communicate_boundary() {
     std::size_t index[DIM];
     std::size_t cell_index;
     std::size_t ghost_index;
+    std::size_t old_ghost_size;
     int num = 0;
     int tag = 0;
     MPI_Status status;
@@ -299,8 +300,8 @@ void SubDomain::communicate_boundary() {
     }
     
     for (std::size_t d = 0; d < DIM; ++d) {
-
         LOOP_INDEX_OVER_FACE(index, limits, d,
+
                              tag = indices[all_but[d][0]];
 
                              for (std::size_t j = 1; j < DIM - 1; ++j) {
@@ -314,25 +315,28 @@ void SubDomain::communicate_boundary() {
                                     index[d] = ghost_border_width[d];
                                     cell_index = get_linear_index(index);
 
+                                   //
+
                                      MPI_Isend(&cells[cell_index].particles[0], cells[cell_index].particles.size(),
                                                MPI_PARTICLE, neighbors[d][0], tag, MPI_COMM_WORLD, &req);
                                      MPI_Request_free(&req);
                                  }
 
                                  if (neighbors[d][1] >= 0) {
-
                                      index[d] = n_cells[d] - 1;
                                      ghost_index = get_linear_index(index);
+
 
 
                                      MPI_Probe(neighbors[d][1], tag, MPI_COMM_WORLD, &status);
                                      MPI_Get_count(&status, MPI_PARTICLE, &num);
 
-                                     cells[ghost_index].particles.resize(num);
+                                     old_ghost_size = cells[ghost_index].particles.size();
+                                     cells[ghost_index].particles.resize(old_ghost_size + num);
 
-
-                                     MPI_Recv(&cells[ghost_index].particles[0], num, MPI_PARTICLE, neighbors[d][1], tag,
+                                     MPI_Recv(&cells[ghost_index].particles[old_ghost_size], num, MPI_PARTICLE, neighbors[d][1], tag,
                                               MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+
 
                                  }
                                  // second half step
@@ -340,7 +344,6 @@ void SubDomain::communicate_boundary() {
 
                                      index[d] = n_cells[d] - 1 - ghost_border_width[d];
                                      cell_index = get_linear_index(index);
-
 
                                      MPI_Isend(&cells[cell_index].particles[0], cells[cell_index].particles.size(),
                                                MPI_PARTICLE, neighbors[d][1], tag, MPI_COMM_WORLD, &req);
@@ -355,9 +358,10 @@ void SubDomain::communicate_boundary() {
                                      MPI_Probe(neighbors[d][0], tag, MPI_COMM_WORLD, &status);
                                      MPI_Get_count(&status, MPI_PARTICLE, &num);
 
-                                     cells[ghost_index].particles.resize(num);
 
-                                     MPI_Recv(&cells[ghost_index].particles[0], num, MPI_PARTICLE, neighbors[d][0], tag,
+                                     old_ghost_size = cells[ghost_index].particles.size();
+                                     cells[ghost_index].particles.resize(old_ghost_size + num);
+                                     MPI_Recv(&cells[ghost_index].particles[old_ghost_size], num, MPI_PARTICLE, neighbors[d][0], tag,
                                               MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 
                                  }
@@ -365,7 +369,6 @@ void SubDomain::communicate_boundary() {
         );
         limits[d][0] = 0;
         limits[d][1] = n_cells[d];
-
     }
 }
 
