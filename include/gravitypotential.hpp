@@ -8,6 +8,9 @@
  */
 class GravityPotential : public Potential {
 public:
+    GravityPotential() = default;
+    GravityPotential(real _cutoff_sq) : cutoff_sq(_cutoff_sq) {}
+
     /**
      * @brief calculate the force between the two particles and add it to p
      *
@@ -16,7 +19,9 @@ public:
      *
      * @return potential energy
      */
-    real force(Particle &p, Particle &q, real cutoff_sq = std::numeric_limits<real>::max(), real difference_offset[DIM] = {0});
+    real force(Particle &p, Particle &q, real distance_sq, vector_t difference_offset = {});
+
+    real cutoff_sq;
 };
 
 #endif // _GRAVITYPOTENTIAL_HPP

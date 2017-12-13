@@ -9,7 +9,8 @@
 #include "particle.hpp"
 
 struct Cell {
-    std::size_t index[DIM];
+    index_t index;
+    std::vector<std::size_t> neighbors;
     std::vector<Particle> particles;
 };
 

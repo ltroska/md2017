@@ -22,6 +22,17 @@
 
 #include <stdint.h>
 #include <limits.h>
+#include <cstdlib>
+#include <array>
+
+//------------------------------ BASICS ------------------------------//
+#ifdef MD_HAVE_3D
+#define DIM 3
+#define NUM_NEIGHBORS 27
+#else
+#define DIM 2
+    #define NUM_NEIGHBORS 9
+#endif
 
 //------------------------------ DATATYPES ------------------------------//
 
@@ -43,15 +54,10 @@ typedef double real;
    #error "Can't find MPI_TYPE for std::size_t"
 #endif
 
-//------------------------------ NEIGHBOR OFFSETS ------------------------------//
+using index_t = std::array<std::size_t, DIM>;
+using vector_t = std::array<real, DIM>;
 
-#ifdef MD_HAVE_3D
-    #define DIM 3
-    #define NUM_NEIGHBORS 27
-#else
-    #define DIM 2
-    #define NUM_NEIGHBORS 9
-#endif
+//------------------------------ NEIGHBOR OFFSETS ------------------------------//
 
 extern int neighbor_offsets[NUM_NEIGHBORS][DIM];
 

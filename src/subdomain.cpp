@@ -14,8 +14,8 @@
 
 #ifdef MD_HAVE_3D
 #define LOOP_INDEX_OVER_FACE(_index, _limits, _normal_dim, _code)\
-	for(std::size_t __id0 = _limits[all_but[_normal_dim][0]][0]; __id0 < _limits[all_but[_normal_dim][0]][1]; ++__id0) {\
-		for(std::size_t __id1 = _limits[all_but[_normal_dim][1]][0]; __id1 < _limits[all_but[_normal_dim][1]][1]; ++__id1) {\
+	for(std::size_t __id0 = _limits[0][all_but[_normal_dim][0]]; __id0 < _limits[1][all_but[_normal_dim][0]]; ++__id0) {\
+		for(std::size_t __id1 = _limits[0][all_but[_normal_dim][1]]; __id1 < _limits[1][all_but[_normal_dim][1]]; ++__id1) {\
 			_index[all_but[_normal_dim][0]]=__id0;\
 			_index[all_but[_normal_dim][1]]=__id1;\
 			_code\
@@ -23,14 +23,13 @@
 	}
 #else
 #define LOOP_INDEX_OVER_FACE(_index, _limits, _normal_dim, _code)\
-	for(std::size_t __id = _limits[all_but[_normal_dim][0]][0]; __id < _limits[all_but[_normal_dim][0]][1]; ++__id) {\
+	for(std::size_t __id = _limits[0][all_but[_normal_dim][0]]; __id < _limits[1][all_but[_normal_dim][0]]; ++__id) {\
 			_index[all_but[_normal_dim][0]]=__id;\
 			_code\
 	}
 #endif
-
 SubDomain::SubDomain(int r, int n) : rank(r), np(n), name("unknown"),t(0),delta_t(0),t_end(0),cell_r_cut(0), cell_r_cut_sq(0), e_kin(0),e_pot(0),e_tot(0),
-                 n_total_particles(0), sigma(0), numprocs({0}), output_interval(1)
+                 sigma(0), output_interval(1), n_total_particles(0), numprocs()
 {
     for (std::size_t d = 0; d < DIM; ++d) {
         upper_border[d] = unknown;
@@ -122,7 +121,7 @@ void SubDomain::read_Parameter(const std::string &filename)
         ghost_border_width[d] = 1;
     }
 
-    from_linear_proc_index(rank, indices);
+    indices = from_linear_proc_index(rank);
 
     for (std::size_t d = 0; d < DIM; ++d) {
         length[d] = total_length[d] / numprocs[d];
@@ -130,7 +129,7 @@ void SubDomain::read_Parameter(const std::string &filename)
         offset[d] = indices[d] * length[d];
     }
 
-    std::size_t neighbor_index[DIM];
+    index_t neighbor_index;
     for (std::size_t d = 0; d < DIM; ++d) {
         for (std::size_t j = 0; j < DIM; ++j)
             neighbor_index[j] = indices[j];
@@ -163,8 +162,6 @@ void SubDomain::read_Parameter(const std::string &filename)
 
             neighbors[d][1] = to_linear_proc_index(neighbor_index);
         }
-
-        LOG_DBG_RANK(rank, d << " low " << neighbors[d][0] << " high " << neighbors[d][1]);
     }
 
     // if cutoff or total_length not set
@@ -193,9 +190,9 @@ void SubDomain::read_Parameter(const std::string &filename)
         n_total_cells *= n_cells[d];
 
     LOG(rank, "total cells: " << n_total_cells);
-    LOG(rank, "cells: " << n_cells[0] << " " << n_cells[1] << " " << n_cells[2]);
-    LOG(rank, "cell length: " << cell_length[0] << " " << cell_length[1] << " " << cell_length[2]);
-    LOG(rank, "offset: " << offset[0] << " " << offset[1] << " " << offset[2]);
+    LOG(rank, "cells: " << n_cells);
+    LOG(rank, "cell length: " << cell_length);
+    LOG(rank, "offset: " << offset);
 
     cells.resize(n_total_cells);
 
@@ -267,14 +264,14 @@ void SubDomain::read_Particles(const std::string &filename)
         }
     }
 
-    LOG_DBG_RANK(rank, "total particles: " << n_total_particles);
+    LOG(rank, "total particles: " << n_total_particles);
 
     // close file
     parfile.close();
 }
 
 std::size_t SubDomain::get_cell_index(Particle const &p) {
-    std::size_t new_index[DIM] = {0};
+    index_t new_index{};
 
     for (std::size_t d = 0; d < DIM; ++d) {
         new_index[d] = std::floor((p.x[d] - offset[d] + ghost_border_width[d]*cell_length[d]) / cell_length[d]);
@@ -284,8 +281,8 @@ std::size_t SubDomain::get_cell_index(Particle const &p) {
 }
 
 void SubDomain::communicate_boundary() {
-    std::size_t limits[DIM][2];
-    std::size_t index[DIM];
+    std::array<index_t, 2> limits;
+    index_t index;
     std::size_t cell_index;
     std::size_t ghost_index;
     std::size_t old_ghost_size;
@@ -295,8 +292,8 @@ void SubDomain::communicate_boundary() {
     MPI_Request req;
     
     for (std::size_t d = 0; d < DIM; ++d) {
-        limits[d][0] = ghost_border_width[d];
-        limits[d][1] = n_cells[d] - ghost_border_width[d];
+        limits[0][d] = ghost_border_width[d];
+        limits[1][d] = n_cells[d] - ghost_border_width[d];
     }
     
     for (std::size_t d = 0; d < DIM; ++d) {
@@ -367,14 +364,14 @@ void SubDomain::communicate_boundary() {
                                  }
 
         );
-        limits[d][0] = 0;
-        limits[d][1] = n_cells[d];
+        limits[0][d] = 0;
+        limits[1][d] = n_cells[d];
     }
 }
 
 void SubDomain::communicate_ghostborder() {
-    std::size_t limits[DIM][2];
-    std::size_t index[DIM];
+    std::array<index_t, 2> limits;
+    index_t index;
     std::size_t cell_index;
     std::size_t ghost_index;
     std::size_t old_particle_size;
@@ -384,8 +381,8 @@ void SubDomain::communicate_ghostborder() {
     MPI_Request req;
 
     for (std::size_t d = 0; d < DIM; ++d) {
-        limits[d][0] = 0;
-        limits[d][1] = n_cells[d];
+        limits[0][d] = 0;
+        limits[1][d] = n_cells[d];
     }
 
     for (std::size_t d = 0; d < DIM; ++d) {
@@ -451,19 +448,19 @@ void SubDomain::communicate_ghostborder() {
                                  }
 
         );
-        limits[d][0] = 1;
-        limits[d][1] = n_cells[d] - ghost_border_width[d];
+        limits[0][d] = 1;
+        limits[1][d] = n_cells[d] - ghost_border_width[d];
     }
 }
 
 void SubDomain::clear_ghostborder() {
-    std::size_t limits[DIM][2];
-    std::size_t index[DIM];
+    std::array<index_t, 2> limits;
+    index_t index;
     std::size_t ghost_index;
 
     for (std::size_t d = 0; d < DIM; ++d) {
-        limits[d][0] = 0;
-        limits[d][1] = n_cells[d];
+        limits[0][d] = 0;
+        limits[1][d] = n_cells[d];
     }
 
     for (std::size_t d = 0; d < DIM; ++d) {

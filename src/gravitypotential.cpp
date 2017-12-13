@@ -2,9 +2,9 @@
 #include <cmath>
 #include <iostream>
 
-real GravityPotential::force(Particle &p, Particle &q, real cutoff_sq, real difference_offset[DIM])
+real GravityPotential::force(Particle &p, Particle &q, real distance_sq, vector_t difference_offset)
 {
-    real diff[DIM];
+    vector_t diff;
     real r_sq = 0;
 
     for (std::size_t d = 0; d < DIM; ++d) {

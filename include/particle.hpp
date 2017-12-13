@@ -21,13 +21,13 @@ public:
     /// Mass
     real m;
     /// Position
-    real x[DIM];
+    vector_t x;
     /// Velocity
-    real v[DIM];
+    vector_t v;
     /// Force
-    real F[DIM];
+    vector_t F;
     /// Force (previous step)
-    real F_old[DIM];
+    vector_t F_old;
 };
 
 MPI_Datatype setup_particle_mpi_type();

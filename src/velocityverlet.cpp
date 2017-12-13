@@ -4,9 +4,9 @@ extern int neighbor_offsets[NUM_NEIGHBORS][DIM];
 
 #ifdef MD_HAVE_3D
 #define LOOP_INDEX(_index, _limits, _code)\
-	for(std::size_t __id0 = _limits[0][0]; __id0 < _limits[0][1]; ++__id0) {\
-		for(std::size_t __id1 = _limits[1][0]; __id1 < _limits[1][1]; ++__id1) {\
-            for(std::size_t __id2 = _limits[2][0]; __id2 < _limits[2][1]; ++__id2) {\
+	for(std::size_t __id0 = _limits[0][0]; __id0 < _limits[1][0]; ++__id0) {\
+		for(std::size_t __id1 = _limits[0][1]; __id1 < _limits[1][1]; ++__id1) {\
+            for(std::size_t __id2 = _limits[0][2]; __id2 < _limits[1][2]; ++__id2) {\
                 _index[0]=__id0;\
                 _index[1]=__id1;\
                 _index[2]=__id2;\
@@ -16,8 +16,8 @@ extern int neighbor_offsets[NUM_NEIGHBORS][DIM];
 	}
 #else
 #define LOOP_INDEX(_index, _limits, _code)\
-	for(std::size_t __id0 = _limits[0][0]; __id0 < _limits[0][1]; ++__id0) {\
-		for(std::size_t __id1 = _limits[1][0]; __id1 < _limits[1][1]; ++__id1) {\
+	for(std::size_t __id0 = _limits[0][0]; __id0 < _limits[1][0]; ++__id0) {\
+		for(std::size_t __id1 = _limits[0][1]; __id1 < _limits[1][1]; ++__id1) {\
             _index[0]=__id0;\
             _index[1]=__id1;\
             _code\
@@ -77,16 +77,17 @@ void VelocityVerlet::timestep(real delta_t)
 
 void VelocityVerlet::comp_F() {
     W.e_pot = 0;
-    std::size_t neighbor_cell_index[DIM] = {0};
+    index_t neighbor_cell_index{};
+    std::size_t neighbor_cell_linear_index;
     real distance_sqr = 0;
-    real difference_offset[DIM] = {0};
+    vector_t difference{};
     real potential = 0;
 
-    std::size_t index[DIM];
-    std::size_t limits[DIM][2];
+    index_t index{};
+    std::array<index_t, 2> limits{};
     for (std::size_t d = 0; d < DIM; ++d) {
-        limits[d][0] = W.ghost_border_width[d];
-        limits[d][1] = W.n_cells[d] - W.ghost_border_width[d];
+        limits[0][d] = W.ghost_border_width[d];
+        limits[1][d] = W.n_cells[d] - W.ghost_border_width[d];
     }
 
     LOOP_INDEX(index, limits,
@@ -95,7 +96,8 @@ void VelocityVerlet::comp_F() {
         for (std::size_t n = 0; n < NUM_NEIGHBORS; ++n) {
             for (std::size_t d = 0; d < DIM; ++d)
                 neighbor_cell_index[d] = c.index[d] + neighbor_offsets[n][d];
-            auto const neighbor_cell_linear_index = W.get_linear_index(neighbor_cell_index);
+
+            neighbor_cell_linear_index = W.get_linear_index(neighbor_cell_index);
 
             for (auto &p : c.particles) {
                 // compute force
@@ -104,25 +106,20 @@ void VelocityVerlet::comp_F() {
                         distance_sqr = 0;
 
                         for (std::size_t d = 0; d < DIM; ++d) {
-                            neighbor_cell_index[d] = c.index[d] + neighbor_offsets[n][d];
-                        }
-
-                        for (std::size_t d = 0; d < DIM; ++d) {
                             if (c.index[d] == W.ghost_border_width[d] && neighbor_cell_index[d] == 0 && W.indices[d] == 0 &&
                                 W.lower_border[d] == periodic) {
-                                distance_sqr += sqr(p.x[d] + W.length[d] - q.x[d]);
-                                difference_offset[d] = W.length[d];
+                                difference[d] = q.x[d]- p.x[d] - W.length[d];
                             } else if (neighbor_cell_index[d] == W.n_cells[d] - 1 && c.index[d] == W.n_cells[d] - W.ghost_border_width[d] - 1
                                         && W.indices[d] == W.numprocs[d] - 1 &&  W.upper_border[d] == periodic) {
-                                distance_sqr += sqr(p.x[d] - W.length[d] - q.x[d]);
-                                difference_offset[d] = -W.length[d];
+                                difference[d] = q.x[d]- p.x[d] + W.length[d];
                             } else {
-                                distance_sqr += sqr(p.x[d] - q.x[d]);
-                                difference_offset[d] = 0;
+                                difference[d] = q.x[d] - p.x[d];
                             }
+
+                            distance_sqr += sqr(difference[d]);
                         }
 
-                        potential = Pot.force(p, q, distance_sqr, difference_offset);
+                        potential = Pot.force(p, q, distance_sqr, difference);
                         if (!W.is_in_domain(q))
                             potential /= 2;
                         W.e_pot += potential;
@@ -136,11 +133,11 @@ void VelocityVerlet::comp_F() {
 
 void VelocityVerlet::update_V()
 {
-    std::size_t index[DIM];
-    std::size_t limits[DIM][2];
+    index_t index;
+    std::array<index_t, 2> limits;
     for (std::size_t d = 0; d < DIM; ++d) {
-        limits[d][0] = W.ghost_border_width[d];
-        limits[d][1] = W.n_cells[d] - W.ghost_border_width[d];
+        limits[0][d] = W.ghost_border_width[d];
+        limits[1][d] = W.n_cells[d] - W.ghost_border_width[d];
     }
 
     W.e_kin = 0;
@@ -172,12 +169,12 @@ void VelocityVerlet::update_V()
 
 void VelocityVerlet::update_X()
 {
-    std::size_t index[DIM];
-    std::size_t limits[DIM][2];
+    index_t index;
+    std::array<index_t, 2> limits;
     bool keep_it;
     for (std::size_t d = 0; d < DIM; ++d) {
-        limits[d][0] = W.ghost_border_width[d];
-        limits[d][1] = W.n_cells[d] - W.ghost_border_width[d];
+        limits[0][d] = W.ghost_border_width[d];
+        limits[1][d] = W.n_cells[d] - W.ghost_border_width[d];
     }
 
     LOOP_INDEX(index, limits,

@@ -3,19 +3,14 @@
 #include <cmath>
 #include <iostream>
 
-real LJPotential::force(Particle& p, Particle &q, real distance_sq, real difference_offset[DIM])
+real LJPotential::force(Particle& p, Particle &q, real distance_sq, vector_t difference)
 {
-  real force[DIM];
-  real difference[DIM];
+  vector_t force;
   real const epsilon = 1.0;
   real potential = 0;
   real temp =0.0;
 
   // TODO: ideal place to execute mixing.
-
-  for(std::size_t d = 0; d<DIM; ++d) {
-    difference[d] = q.x[d]- (p.x[d] + difference_offset[d]);
-  }
 
   if (distance_sq > cutoff_sq)
     return 0;

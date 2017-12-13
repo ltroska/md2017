@@ -17,7 +17,7 @@ public:
      *
      * @return potential energy
      */
-    virtual real force(Particle &p, Particle &q, real cutoff_sq = std::numeric_limits<real>::max(), real difference_offset[DIM] = {0}) = 0;
+    virtual real force(Particle &p, Particle &q, real distance_sq, vector_t difference) = 0;
 };
 
 #endif // _POTENTIAL_HPP

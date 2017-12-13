@@ -23,4 +23,29 @@
 
 #define LOG_DBG_ROOT(_rank, _msg) LOG_CHECK (_rank == 0 ? !(LOG(_rank, _msg)).fail() : false)
 
+inline std::ostream& operator<<(std::ostream& os, std::size_t arr[DIM]) {
+    os << "{";
+    for (std::size_t d = 0; d < DIM; ++d) {
+        os << arr[d];
+        if (d != DIM - 1)
+            os << ",";
+    }
+    os << "}";
+
+    return os;
+}
+
+template<typename T>
+inline std::ostream& operator<<(std::ostream& os,  std::array<T, DIM> arr) {
+    os << "{";
+    for (std::size_t d = 0; d < DIM; ++d) {
+        os << arr[d];
+        if (d != DIM - 1)
+            os << ",";
+    }
+    os << "}";
+
+    return os;
+}
+
 #endif

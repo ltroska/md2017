@@ -53,23 +53,27 @@ public:
     inline std::size_t get_linear_index(std::size_t i, std::size_t j, std::size_t k) {
         return i + n_cells[0]*(j + n_cells[1]*k);
     }
-    inline std::size_t get_linear_index(std::size_t idx[3]) {
+    inline std::size_t get_linear_index(index_t idx) {
         return get_linear_index(idx[0], idx[1], idx[2]);
     }
 
-    inline void from_linear_proc_index(std::size_t idx, std::size_t result[DIM]) {
+    inline index_t from_linear_proc_index(std::size_t idx) {
+        index_t result;
+
         result[0] = idx % numprocs[0];
         idx -= result[0];
         idx /= numprocs[0];
         result[1] = idx % numprocs[1];
         result[2] = idx / numprocs[1];
+
+        return result;
     }
 
     inline int to_linear_proc_index(std::size_t i, std::size_t j, std::size_t k) {
         return i + numprocs[0]*(j + numprocs[1]*k);
     }
 
-    inline int to_linear_proc_index(std::size_t idx[3]) {
+    inline int to_linear_proc_index(index_t idx) {
         return to_linear_proc_index(idx[0], idx[1], idx[2]);
     }
 
@@ -78,20 +82,24 @@ public:
         return i + n_cells[0] * j;
     }
 
-    inline std::size_t get_linear_index(std::size_t idx[2]) {
+    inline std::size_t get_linear_index(index_t idx) {
         return get_linear_index(idx[0], idx[1]);
     }
 
-    inline void from_linear_proc_index(std::size_t idx, std::size_t result[DIM]) {
+    inline index_t from_linear_proc_index(std::size_t idx) {
+        index_t result;
+
         result[0] = idx % numprocs[0];
         result[1] = idx / numprocs[0];
+
+        return result;
     }
 
      inline int to_linear_proc_index(std::size_t i, std::size_t j) {
         return i + numprocs[0]*j;
     }
 
-    inline int to_linear_proc_index(std::size_t idx[DIM]) {
+    inline int to_linear_proc_index(index_t idx) {
         return to_linear_proc_index(idx[0], idx[1]);
     }
 #endif
@@ -135,23 +143,23 @@ public:
 
     std::size_t n_total_particles;
 
-    std::size_t indices[DIM];
+    std::array<std::size_t, DIM> indices;
 
-    std::size_t ghost_border_width[DIM];
+    std::array<std::size_t, DIM> ghost_border_width;
 
     /// Vector of cells
     std::vector<Cell> cells;
     /// Number of cells in each dimension
-    std::size_t n_cells[DIM];
+    std::array<std::size_t, DIM> n_cells;
 
     std::size_t n_total_cells;
     /// Length of each cell dimension
-    real cell_length[DIM];
+    vector_t cell_length;
 
 
-    std::array<double, DIM> total_length;
-    std::array<double, DIM> length;
-    std::array<double, DIM> offset;
+    vector_t total_length;
+    vector_t length;
+    vector_t offset;
 
 
     std::array<BorderType, DIM> lower_border;
@@ -159,7 +167,7 @@ public:
 
     std::array<std::array<int, 2>, DIM> neighbors;
 
-    int numprocs[DIM];
+    std::array<std::size_t, DIM> numprocs;
 
     MPI_Datatype MPI_PARTICLE;
 };

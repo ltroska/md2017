@@ -19,7 +19,7 @@ public:
      *
      * @return potential energy
      */
-    real force(Particle &p, Particle &q, real distance_sq, real difference_offset[DIM] = {0});
+    real force(Particle &p, Particle &q, real distance_sq, vector_t difference);
 
     real sigma;
     real cutoff_sq;
