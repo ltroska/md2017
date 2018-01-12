@@ -42,12 +42,25 @@ Observer::~Observer()
 
 void Observer::output_statistics()
 {
+    energies.push_back(W.e_kin);
+
+    if (energies.size() > 100)
+        energies.erase(energies.begin());
+
+    real average = 0;
+
+    for (auto const& e : energies)
+        average += e;
+
+    average /= energies.size();
+
     // write statistics into the filestream, seperated with tabulars
     statistics
         << W.t << "\t"
         << W.e_pot << "\t"
         << W.e_kin << "\t"
         << W.e_kin + W.e_pot << "\t"
+        << average << "\t"
         << std::endl;
 }
 

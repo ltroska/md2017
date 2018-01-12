@@ -138,6 +138,14 @@ public:
 
     real sigma;
 
+    real set_start_temperature;
+
+    std::size_t thermostat_step_interval;
+
+    real thermostat_target_temperature;
+
+    int random_seed;
+
     std::size_t output_interval;
 
 

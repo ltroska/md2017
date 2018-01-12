@@ -8,4 +8,4 @@ cell_r_cut 8.5
 length 510 510 510
 upper_border leaving leaving leaving
 lower_border leaving leaving leaving
-num_procs 2 1 2
+num_procs 2 2 2

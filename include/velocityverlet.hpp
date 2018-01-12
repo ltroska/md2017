@@ -51,6 +51,8 @@ public:
      */
     virtual void update_V();
 
+    void temperature_scale_V();
+
     /**
      * @brief calculate the new position of all particles according to their velocity
      */

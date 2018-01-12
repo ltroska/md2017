@@ -63,16 +63,27 @@ void VelocityVerlet::timestep(real delta_t)
     W.t += delta_t;
 
     update_X();
+
     W.communicate_ghostborder();
+
     W.clear_ghostborder();
+
     W.communicate_boundary();
+
     comp_F();
+
     W.clear_ghostborder();
+
     update_V();
 
+    if (iter % W.thermostat_step_interval == 0) {
+        temperature_scale_V();
+    }
+
     // notify observer
-    if (iter % W.output_interval == 0)
+    if (iter % W.output_interval == 0) {
         O.notify();
+    }
 }
 
 void VelocityVerlet::comp_F() {
@@ -123,6 +134,7 @@ void VelocityVerlet::comp_F() {
                         if (!W.is_in_domain(q))
                             potential /= 2;
                         W.e_pot += potential;
+
                     }
                 }
             }
@@ -150,6 +162,8 @@ void VelocityVerlet::update_V()
 
                     for (std::size_t d = 0; d < DIM; ++d) {
                         p.v[d] = p.v[d] + W.delta_t * .5 / p.m * (p.F_old[d] + p.F[d]);
+
+
                         tmp += p.v[d] * p.v[d];
                     }
 
@@ -158,13 +172,51 @@ void VelocityVerlet::update_V()
     );
 
     real global_sum;
-    MPI_Reduce(&W.e_kin, &global_sum, 1, my_MPI_REAL, MPI_SUM, 0, MPI_COMM_WORLD);
+    MPI_Allreduce(&W.e_kin, &global_sum, 1, my_MPI_REAL, MPI_SUM, MPI_COMM_WORLD);
 
     W.e_kin = global_sum;
 
-    MPI_Reduce(&W.e_pot, &global_sum, 1, my_MPI_REAL, MPI_SUM, 0, MPI_COMM_WORLD);
+    MPI_Allreduce(&W.e_pot, &global_sum, 1, my_MPI_REAL, MPI_SUM, MPI_COMM_WORLD);
 
     W.e_pot = global_sum;
+}
+
+void VelocityVerlet::temperature_scale_V() {
+    std::size_t local_num_particles = 0;
+    std::size_t global_num_particles = 0;
+
+    real gamma = 1;
+
+    for (auto const &c : W.cells)
+        local_num_particles += c.particles.size();
+
+    MPI_Allreduce(&local_num_particles, &global_num_particles, 1, my_MPI_SIZE_T, MPI_SUM, MPI_COMM_WORLD);
+
+    real temperature = 2. / (3. * global_num_particles * 1) * W.e_kin;
+
+    real beta = std::sqrt(1 + gamma * (W.thermostat_target_temperature / temperature - 1));
+
+    index_t index;
+    std::array<index_t, 2> limits;
+    for (std::size_t d = 0; d < DIM; ++d) {
+        limits[0][d] = W.ghost_border_width[d];
+        limits[1][d] = W.n_cells[d] - W.ghost_border_width[d];
+    }
+
+    real tmp;
+    LOOP_INDEX(index, limits,
+               auto const idx = W.get_linear_index(index);
+                   auto& c = W.cells[idx];
+                   for (auto &p : c.particles) {
+                       tmp = 0;
+
+                       for (std::size_t d = 0; d < DIM; ++d) {
+                           p.v[d] *= beta;
+
+                           tmp += p.v[d] * p.v[d];
+                       }
+                   }
+    );
 }
 
 void VelocityVerlet::update_X()
@@ -191,10 +243,14 @@ void VelocityVerlet::update_X()
                         p.F[d] = 0;
                     }
 
+                  //  if (p.id == 427)
+                   //     std::cout << p << std::endl;
+
                     keep_it = false;
                     auto const new_cell_index = W.get_cell_index(p);
 
                     if (new_cell_index != idx) {
+
 
                         for (std::size_t d = 0; d < DIM; ++d) {
 

@@ -4,6 +4,7 @@
 #include "subdomain.hpp"
 #include <iostream>
 #include <fstream>
+#include <queue>
 
 /**
  * @brief an observer for the timediscretization
@@ -49,6 +50,8 @@ public:
 protected:
     /// The world we are observing
     SubDomain &W;
+
+    std::vector<real> energies;
 
     std::string output_prefix;
 

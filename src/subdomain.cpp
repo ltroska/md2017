@@ -5,6 +5,7 @@
 #include <sstream>
 #include <cmath>
 #include <limits>
+#include <random>
 
 #ifdef MD_HAVE_3D
     const std::size_t all_but[DIM][DIM - 1] = {{2, 1}, {2, 0}, {1, 0}};
@@ -80,11 +81,29 @@ void SubDomain::read_Parameter(const std::string &filename)
         if (option=="cell_r_cut") {
             strstr >> cell_r_cut;
         }
+
         if (option=="sigma") {
             strstr >> sigma;
         }
+
         if (option=="output_interval") {
             strstr >> output_interval;
+        }
+
+        if (option=="set_start_temperature") {
+            strstr >> set_start_temperature;
+        }
+
+        if (option=="thermostat_step_interval") {
+            strstr >> thermostat_step_interval;
+        }
+
+        if (option=="thermostat_target_temperature") {
+            strstr >> thermostat_target_temperature;
+        }
+
+        if (option=="random_seed") {
+            strstr >> random_seed;
         }
 
         std::string tmp;
@@ -113,6 +132,10 @@ void SubDomain::read_Parameter(const std::string &filename)
                 strstr >> numprocs[d];
         }
     }
+
+    for (std::size_t d = 0; d < DIM; ++d)
+        if (numprocs[d] == 0)
+            numprocs[d] = 1;
     // close file
     parfile.close();
 
@@ -228,6 +251,12 @@ void SubDomain::read_Particles(const std::string &filename)
             "read_Particles(): Can't open file '" + filename + "' for reading."
         );
 
+    std::random_device rd{};
+    std::mt19937 gen{rd()};
+
+    if (random_seed >= 1)
+        gen.seed(random_seed);
+
     // helper strings
     std::string line;
     // read file till eof
@@ -252,8 +281,16 @@ void SubDomain::read_Particles(const std::string &filename)
                 part.F_old[d] = 0;
             }
 
-            for (std::size_t d = 0; d < DIM; ++d) {
-                strstr >> part.v[d];
+            std::normal_distribution<> maxwell_boltzmann{0., 1*set_start_temperature / part.m};
+
+            if (set_start_temperature >= 0) {
+                for (std::size_t d = 0; d < DIM; ++d) {
+                    part.v[d] = maxwell_boltzmann(gen);
+                }
+            } else {
+                for (std::size_t d = 0; d < DIM; ++d) {
+                    strstr >> part.v[d];
+                }
             }
 
             if(is_in_domain(part)) {
